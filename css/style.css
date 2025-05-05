@@ -1,0 +1,49 @@
+header {
+    background-color: #f0e68c; /* Color amarillo claro de "Huellitas de Amor" */
+    font-family: "Open Sans", Impact, sans-serif;
+    color: black; /* Color del texto de "Huellitas de Amor" */
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column; /* Coloca el logo y la navegación en columnas */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+  
+  .logo-container {
+    text-align: center; /* Centra el texto "HUELLITAS DE AMOR" */
+    margin-bottom: 30px; /* Espacio entre el título y la navegación */
+  }
+  
+  header h1 {
+    margin: 0; /* Elimina márgenes innecesarios del título */
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 2.8em; /* Ajusta el tamaño de la fuente si lo deseas */
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Coloca los elementos de la lista en línea horizontal */
+  }
+  
+  nav li {
+    margin-right: 25px; /* Espacio entre los enlaces */
+  }
+  
+  nav li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último enlace */
+  }
+  
+  nav a {
+    font-family: "Open Sans", Arial, sans-serif;
+    color:black; /* Color azul claro para "Inicio" como en la imagen */
+    text-decoration: none;
+  }
+  
+  nav a:not(:first-child) { /* Estilo para los enlaces que no son el primero */
+    color: black; /* Color negro para el resto de los enlaces */
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
