@@ -1,5 +1,5 @@
 header {
-  /* --- ESTILOS PARA EL FONDO DEL HEADER
+  /* ---  PARA EL FONDO DEL HEADER
   background-image: url('/img/DogCat.jpg');
   background-size: cover;
   background-position: center center;
@@ -23,6 +23,7 @@ header {
 
 /* --- CONTENEDOR PARA TÍTULO Y NAVEGACIÓN --- */
 .header-main-content {
+ 
   display: flex;
   flex-direction: column; /* H1 y Nav uno encima del otro */
   align-items: center;    /* Centra el H1 y Nav horizontalmente dentro de este bloque */
