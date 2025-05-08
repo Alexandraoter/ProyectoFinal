@@ -83,6 +83,102 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
+/* Estilos para el Hero Slider / Carrusel */
+
+.hero-slider {
+  position: relative; /* Necesario para posicionar los puntos y flechas */
+  width: 100%;
+  max-width: 1000px;  /* Ajusta el ancho máximo del carrusel */
+  margin: 20px auto;  /* Centra el carrusel en la página y añade espacio arriba/abajo */
+  overflow: hidden;   /* Muy importante: oculta las imágenes que no están activas */
+  border-radius: 8px; /* Opcional: bordes redondeados para el carrusel */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Opcional: una sombra sutil */
+}
+
+.slides-container {
+  display: flex; /* Coloca los slides (imágenes) uno al lado del otro */
+  transition: transform 0.5s ease-in-out; /* Animación suave al cambiar de slide */
+  /* El ancho total será 100% * número de slides (manejado por JS al calcular la posición) */
+}
+
+.slide {
+  min-width: 100%; /* Cada slide ocupa el 100% del ancho del .hero-slider */
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;        /* La imagen ocupa todo el ancho del slide */
+  height: auto;       /* Mantiene la proporción original de la imagen */
+  display: block;     /* Elimina cualquier espacio extra debajo de la imagen */
+  /* Opcional: Si quieres que todas las imágenes tengan la misma altura y se recorten si es necesario */
+  /* max-height: 450px; */ /* Define una altura máxima */
+  /* object-fit: cover; */  /* Hace que la imagen cubra el área, puede recortar */
+}
+
+/* Estilos para los puntos de navegación (dots) */
+.slider-dots {
+  position: absolute; /* Posiciona los puntos sobre el carrusel */
+  bottom: 15px;       /* Distancia desde el borde inferior */
+  left: 50%;          /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino para el centrado exacto */
+  display: flex;      /* Coloca los puntos en línea */
+  gap: 8px;          /* Espacio entre los puntos */
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente para los puntos */
+  border-radius: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.6); /* Color de punto inactivo (blanco semi-transparente) */
+  border-radius: 50%; /* Hace que sean círculos */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 1px solid rgba(0,0,0,0.2); /* Borde sutil */
+}
+
+.dot:hover {
+  transform: scale(1.2); /* Agranda un poco el punto al pasar el mouse */
+}
+
+.dot.active {
+  background-color: #4CAF50; /* Color del punto activo (verde, como en tu ejemplo) */
+  /* O puedes usar el color de tu marca, por ejemplo: */
+  /* background-color: chocolate; */
+}
+
+
+/* Opcional: Estilos para flechas de navegación */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10; /* Asegura que estén por encima de las imágenes */
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.slider-nav:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-nav.prev {
+  left: 15px;
+}
+
+.slider-nav.next {
+  right: 15px;
+}
+
+
 p {
   font-family: cursive;
 }
