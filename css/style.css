@@ -1,11 +1,11 @@
 header {
-      /* --- ESTILOS PARA EL FONDO DEL HEADER --- */
+      /* --- ESTILOS PARA EL FONDO DEL HEADER
     background-image: url('/img/DogCat.jpg'); 
-    background-size: cover;         /* Hace que la imagen cubra todo el header, puede recortar partes */
-    background-position: center center; /* Centra la imagen en el header */
-    background-repeat: no-repeat;   
-    background-color: #f0e68c; /* Color amarillo claro de "Huellitas de Amor" */
-    font-family: "Open Sans", Impact, sans-serif;
+    background-size: cover;         /* Hace que la imagen cubra todo el header, puede recortar partes 
+    background-position: center center; /* Centra la imagen en el header 
+    background-repeat: no-repeat;*/
+    background-color: #f0e68c;  /*Color amarillo claro de "Huellitas de Amor" */
+    font-family:cursive;
     color: rgb(249, 7, 7); /* Color del texto de "Huellitas de Amor" */
     padding: 12px 15px;
     display: flex;
@@ -20,7 +20,7 @@ header {
   
   header h1 {
     margin: 0; /* Elimina márgenes innecesarios del título */
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family:cursive;
     font-size: 3.5em; /* Ajusta el tamaño de la fuente si lo deseas */
   }
   
@@ -40,7 +40,7 @@ header {
   }
   
   nav a {
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family:cursive;
     color:rgb(250, 14, 14); /* Color azul claro para "Inicio" como en la imagen */
     text-decoration: none;
   }
@@ -52,3 +52,7 @@ header {
   nav a:hover {
     text-decoration: underline;
   }
+
+p{
+  font-family:cursive
+}
