@@ -55,8 +55,8 @@ nav a:hover {
   /* text-decoration: underline; /* Eliminamos el subrayado para reemplazarlo con otros efectos */
   color:bisque;                /* Cambia el color del texto a blanco al pasar el cursor */
   background-color:chocolate; /* Añade un fondo marrón oscuro (puedes usar 'chocolate' también) */
-  font-size: 1.25em;           /* Aumenta el tamaño de la fuente (relativo al 1.1em base) */
-  transform: translateY(-2px); /* Efecto sutil de "levantar" el enlace */
+  font-size: 1.11em;           /* Aumenta el tamaño de la fuente (relativo al 1.1em base) */
+  transform: translateY(-1px); /* Efecto sutil de "levantar" el enlace */
   /* box-shadow: 0px 3px 6px rgba(0,0,0,0.2); /* Opcional: añade una sombra */
 }
 
