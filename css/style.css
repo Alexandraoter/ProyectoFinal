@@ -1,58 +1,65 @@
 header {
-      /* --- ESTILOS PARA EL FONDO DEL HEADER
-    background-image: url('/img/DogCat.jpg'); 
-    background-size: cover;         /* Hace que la imagen cubra todo el header, puede recortar partes 
-    background-position: center center; /* Centra la imagen en el header 
-    background-repeat: no-repeat;*/
-    background-color: #f0e68c;  /*Color amarillo claro de "Huellitas de Amor" */
-    font-family:cursive;
-    color: rgb(249, 7, 7); /* Color del texto de "Huellitas de Amor" */
-    padding: 12px 15px;
-    display: flex;
-    flex-direction: column; /* Coloca el logo y la navegación en columnas */
-    align-items: center; /* Centra los elementos horizontalmente */
-  }
-  
-  .logo-container {
-    text-align: center; /* Centra el texto "HUELLITAS DE AMOR" */
-    margin-bottom: 3.5px; /* Espacio entre el título y la navegación */
-  }
-  
-  header h1 {
-    margin: 0; /* Elimina márgenes innecesarios del título */
-    font-family:cursive;
-    font-size: 3.5em; /* Ajusta el tamaño de la fuente si lo deseas */
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Coloca los elementos de la lista en línea horizontal */
-  }
-  
-  nav li {
-    margin-right: 25px; /* Espacio entre los enlaces */
-  }
-  
-  nav li:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último enlace */
-  }
-  
-  nav a {
-    font-family:cursive;
-    color:rgb(250, 14, 14); /* Color azul claro para "Inicio" como en la imagen */
-    text-decoration: none;
-  }
-  
-  nav a:not(:first-child) { /* Estilo para los enlaces que no son el primero */
-    color: black; /* Color negro para el resto de los enlaces */
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
+  /* --- ESTILOS PARA EL FONDO DEL HEADER
+  background-image: url('/img/DogCat.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; */
+  background-color: bisque;  /* Color amarillo claro de "Huellitas de Amor" */
+  font-family: cursive;
+  color: chocolate; /* Color del texto de "Huellitas de Amor" */
+  padding: 10px 11px;
+  display: flex;
+  flex-direction: column; /* Coloca el logo y la navegación en columnas */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
 
-p{
-  font-family:cursive
+header h1 {
+  margin: 0;
+  font-size: 3.5em; /* Ajusta el tamaño de la fuente si lo deseas */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Coloca los elementos de la lista en línea horizontal */
+}
+
+nav li {
+  margin-right: 25px; /* Espacio entre los enlaces */
+}
+
+nav li:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último enlace */
+}
+
+nav a {
+  font-family: cursive;
+  color: chocolate; /* Color base para los enlaces (será sobrescrito por la siguiente regla para algunos) */
+  text-decoration: none;
+  font-size: 1.1em;      /* Tamaño de fuente base para los enlaces */
+  padding: 5px 10px;     /* Añadimos padding para que el hover con fondo se vea mejor */
+  border-radius: 5px;    /* Bordes redondeados para el hover con fondo */
+  display: inline-block; /* Para que el padding y transform funcionen bien */
+
+  /* --- TRANSICIÓN PARA EFECTOS SUAVES --- */
+  transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
+}
+
+nav a:not(:first-child) { /* Estilo para los enlaces que no son el primero */
+  color: black; /* Color negro para el resto de los enlaces */
+}
+
+/* --- ESTILOS HOVER PARA LOS ENLACES DE NAVEGACIÓN --- */
+nav a:hover {
+  /* text-decoration: underline; /* Eliminamos el subrayado para reemplazarlo con otros efectos */
+  color:bisque;                /* Cambia el color del texto a blanco al pasar el cursor */
+  background-color:chocolate; /* Añade un fondo marrón oscuro (puedes usar 'chocolate' también) */
+  font-size: 1.25em;           /* Aumenta el tamaño de la fuente (relativo al 1.1em base) */
+  transform: translateY(-2px); /* Efecto sutil de "levantar" el enlace */
+  /* box-shadow: 0px 3px 6px rgba(0,0,0,0.2); /* Opcional: añade una sombra */
+}
+
+p {
+  font-family: cursive;
 }
