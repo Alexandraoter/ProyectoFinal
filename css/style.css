@@ -182,3 +182,141 @@ nav a:hover {
 p {
   font-family: cursive;
 }
+
+/* --- MEDIA QUERIES --- */
+
+/* Para Tablets y móviles grandes en horizontal (ej. hasta 1023px) */
+@media (max-width: 1023px) {
+  header h1 {
+    font-size: 2.8em; /* Reducimos un poco el título */
+  }
+
+  nav li {
+    margin-right: 15px; /* Menos espacio entre elementos del menú */
+  }
+
+  nav a {
+    font-size: 1em; /* Ligeramente más pequeño el texto del menú */
+  }
+
+  .hero-slider {
+    max-width: 90%; /* Que no ocupe tanto en tablets */
+  }
+}
+
+
+/* Para Móviles (ej. hasta 767px) */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column; /* Logo y contenido principal uno encima del otro */
+    padding: 15px;
+    text-align: center; /* Centrar todo cuando está en columna */
+  }
+
+  .site-logo {
+    height: 70px; /* Hacemos el logo más pequeño */
+    margin-right: 0; /* Quitamos margen derecho ya que estará centrado */
+    margin-bottom: 15px; /* Espacio entre el logo y el título/nav */
+  }
+
+  .header-main-content {
+    align-items: center; /* Ya lo tenías, pero es bueno confirmarlo */
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+  }
+
+  header h1 {
+    font-size: 2.2em; /* Título considerablemente más pequeño */
+    margin-bottom: 15px; /* Más espacio antes del nav */
+  }
+
+  nav ul {
+    flex-direction: column; /* Apilamos los elementos del menú verticalmente */
+    align-items: center;  /* Centramos los elementos del menú */
+    width: 100%; /* Que la lista ocupe el ancho */
+  }
+
+  nav li {
+    margin-right: 0; /* Sin margen derecho */
+    margin-bottom: 10px; /* Espacio entre elementos del menú apilados */
+    width: 100%; /* Opcional: hacer que cada item ocupe el ancho para mejor toque */
+  }
+
+  nav li:last-child {
+    margin-bottom: 0;
+  }
+
+  nav a {
+    font-size: 1.1em; /* Podemos mantener o incluso aumentar un poco para facilitar el toque */
+    display: block; /* Hacemos que el enlace ocupe todo el espacio del li */
+    text-align: center;
+    padding: 10px; /* Más padding para mejor área de toque */
+  }
+
+  nav a:hover {
+    font-size: 1.15em; /* Ajustar el hover si es necesario */
+    /* El transform translateY puede ser molesto en móvil si causa mucho reflow */
+  }
+
+  /* Ajustes para el Hero Slider en móviles */
+  .hero-slider {
+    max-width: 100%; /* Que ocupe todo el ancho disponible, ya tiene padding el body o contenedor padre */
+    margin: 15px auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  }
+
+  .slide img {
+    /* Si definiste max-height, quizás quieras ajustarlo o quitarlo para móvil */
+    /* max-height: 300px; */
+  }
+
+  .slider-dots {
+    bottom: 10px; /* Un poco menos de espacio desde abajo */
+    padding: 4px;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slider-nav {
+    font-size: 18px; /* Flechas más pequeñas */
+    padding: 6px 10px;
+  }
+
+  .slider-nav.prev {
+    left: 10px;
+  }
+
+  .slider-nav.next {
+    right: 10px;
+  }
+}
+
+
+/* Para Móviles muy pequeños (opcional, ej. hasta 480px) */
+@media (max-width: 480px) {
+  .site-logo {
+    height: 60px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  nav a {
+    font-size: 1em;
+    padding: 8px;
+  }
+
+  /* Si necesitas más ajustes finos para el carrusel en pantallas muy pequeñas */
+  .slider-dots {
+    gap: 5px;
+  }
+
+  .slider-nav {
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+}
