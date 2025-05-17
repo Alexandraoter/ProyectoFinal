@@ -1,60 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huellitas</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <title>Huellitas de Amor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header> 
-
-      <img src="img/Logo.jpg" alt="Logo Huellitas de Amor" class="site-logo"> <span class="comment"><!-- NUEVO: Logo --></span>
-        <div class="header-main-content"> <span class="comment"><!-- NUEVO: Contenedor para título y nav --></span>
-          <h1>HUELLITAS DE AMOR</h1>
-        <div class="container">
-            <nav>
-              <ul>
-                <li><a href="#">Sobre Nosotros</a></li>
-                <li><a href="#">Adóptame</a></li>
-                <li><a href="#">¿Por qué adoptarnos?</a></li>
-                <li><a href="#">Apadrina</a></li>
-                <li><a href="#">Como Ayudarlos</a></li>
-              </ul>
-            </nav>
-          </div>
+    <header>
+        <img src="img/Logo.jpg" alt="Logo Huellitas de Amor" class="site-logo">
+        <div class="header-main-content">
+            <h1>HUELLITAS DE AMOR</h1>
+       <div class="container">
+    <nav class="navbar navbar-expand-md">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="pages/sobrenosotros.html"><i class="fas fa-paw me-2"></i>Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/adoptame.html"><i class="fas fa-heart me-2"></i>Adóptame</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/porque.html"><i class="fas fa-question-circle me-2"></i>¿Por qué adoptarnos?</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-hand-holding-heart me-2"></i>Apadrina</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/ayudarlos.html"><i class="fas fa-hands-helping me-2"></i>Como Ayudarlos</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+        </div>
     </header>
+    <!-- Se saco del div container mt-4 por que estabalimitando el tamaño de la imgs  -->
+ <section class="hero-slider">
+            <div class="slides-container">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="img/frases.jpg" alt="frase 1" class="img-fluid">
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="img/frase.jpg" alt="frase 2" class="img-fluid">
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="img/fras.jpg" alt="frase 3" class="img-fluid">
+                </div>
+            </div>
 
-    <section class="hero-slider">
-      <div class="slides-container">
-          <!-- Slide 1 -->
-          <div class="slide">
-              <img src="img/frases.jpg" alt="frase 1">
-          </div>
-          <!-- Slide 2 -->
-          <div class="slide">
-              <img src="img/frase.jpg" alt="frase2">
-          </div>
-          <!-- Slide 3 -->
-          <div class="slide">
-              <img src="img/fras.jpg" alt="frase 3">
-          </div>
-          
-      </div>
+            <div class="slider-dots">
+                <!-- Los puntos se generarán con JavaScript -->
+            </div>
 
-      <div class="slider-dots">
-          <!-- Los puntos se generarán con JavaScript -->
-      </div>
+            <!-- Flechas de navegación -->
+            <button class="slider-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        </section>
+    <div class="container mt-4">
+       
 
-      <!-- Opcional: Flechas de navegación -->
-      
-      <button class="slider-nav prev" aria-label="Anterior"></button>
-      <button class="slider-nav next" aria-label="Siguiente">></button>
-      
-  </section>
+        <div class="row my-5">
+            <div class="col-md-8 mx-auto text-center">
+                <h2 class="mb-4 ">Bienvenidos a Huellitas de Amor</h2>
+                <p class="lead">Somos una organización dedicada al rescate y cuidado de animales abandonados, 
+                   buscando brindarles un hogar lleno de amor y atención.</p>
+              
+            </div>
+        </div>
+    </div>
 
-    <p>Sobre Nosotros</p>
-    <!-- Script al final del body -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Huellitas de Amor</h5>
+                    <p>Dedicados al rescate y adopción responsable de mascotas.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-envelope me-2"></i> info@huellitasdeamor.org</p>
+                    <p><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Huellitas de Amor. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado para el slider -->
     <script src="js/slider.js"></script>
 </body>
 </html>
