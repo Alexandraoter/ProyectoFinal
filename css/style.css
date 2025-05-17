@@ -112,7 +112,7 @@ nav a:hover {
   display: block;     /* Elimina cualquier espacio extra debajo de la imagen */
   /* Opcional: Si quieres que todas las imágenes tengan la misma altura y se recorten si es necesario */
   /* max-height: 450px; */ /* Define una altura máxima */
-  /* object-fit: cover; */  /* Hace que la imagen cubra el área, puede recortar */
+   object-fit: cover; 
 }
 
 /* Estilos para los puntos de navegación (dots) */
