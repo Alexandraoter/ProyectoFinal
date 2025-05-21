@@ -308,3 +308,107 @@ p {
     padding: 5px 8px;
   }
 }
+
+/* --- ESTILOS PARA EL FOOTER --- */
+.main-footer {
+    background-color: #006400; /* Color de fondo oscuro (como el de las imágenes) */
+    color: white;
+    padding: 30px 20px;
+    font-family: 'Poppins', sans-serif; /* Consistente con el resto del sitio */
+}
+
+.main-footer .footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
+    justify-content: space-between; /* Distribuye las columnas */
+    align-items: flex-start; /* Alinea los ítems arriba */
+    max-width: 1200px; /* Ancho máximo para centrar el contenido del footer */
+    margin: 0 auto; /* Centra el contenido del footer */
+    gap: 20px; /* Espacio entre las columnas */
+    padding-bottom: 20px; /* Padding antes de la línea divisoria */
+}
+
+.main-footer .footer-section {
+    flex: 1; /* Permite que las secciones crezcan y se encojan */
+    min-width: 200px; /* Ancho mínimo para cada columna antes de envolverse */
+    margin-bottom: 20px; /* Espacio debajo de cada sección en pantallas pequeñas */
+}
+
+.main-footer .footer-section h4 {
+    color: white; /* Color de los títulos de las secciones */
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea debajo de los títulos */
+    padding-bottom: 8px;
+}
+
+.main-footer .footer-section p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8); /* Ligeramente más tenue para el texto */
+    font-family: 'Poppins', sans-serif; /* Sobrescribir font-family si es necesario */
+}
+
+/* Estilos específicos para el logo en el footer */
+.main-footer .footer-logo .footer-site-logo {
+    height: 100px; /* Ajusta el tamaño del logo del footer */
+    width: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los iconos sociales */
+.main-footer .social-icons a {
+    color: white;
+    font-size: 1.9em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.main-footer .social-icons a:hover {
+    color: #4CAF50; /* Color de hover para los iconos (o chocolate si prefieres) */
+}
+
+/* Estilos para la sección de abajo del footer */
+.main-footer .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria, si no usas <hr> */
+}
+
+.main-footer .footer-bottom hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Estilo de la línea horizontal */
+    margin: 20px auto;
+    width: 80%; /* Ancho de la línea */
+}
+
+.main-footer .footer-bottom p {
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* Media Queries para responsividad del footer */
+@media (max-width: 767px) {
+    .main-footer .footer-content {
+        flex-direction: column; /* Las columnas se apilan en móviles */
+        align-items: center; /* Centra las secciones */
+        text-align: center;
+    }
+
+    .main-footer .footer-section {
+        min-width: 100%; /* Ocupa todo el ancho disponible */
+        margin-bottom: 30px;
+    }
+
+    .main-footer .footer-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .main-footer .social-icons {
+        justify-content: center; /* Centra los iconos en móviles */
+        display: flex;
+        width: 100%;
+    }
+}
