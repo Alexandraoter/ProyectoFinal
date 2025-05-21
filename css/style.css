@@ -1,42 +1,61 @@
+/* --- ESTILOS GENERALES Y RESET BÁSICO --- */
+body {
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */ /* Quita esta línea temporalmente para depurar el ancho real */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
+}
+
+/* --- ESTILOS PARA EL HEADER --- */
 header {
-  background-color:#006400;
-  color: white; /* Añadido: Establece el color de texto por defecto del header a blanco */
-  font-family: poppins; /* Usas poppins aquí y en nav a, lo cual es consistente. */
-  /* color: chocolate; /* Lo quitamos de aquí, se aplicará al h1 */
-  padding: 8px 20px; /* Aumentamos un poco el padding horizontal para el logo */
-  display: flex;
-  flex-direction: row;    /* CAMBIO: Para alinear logo y contenido principal horizontalmente */
-  align-items: center;    /* CAMBIO: Para centrar verticalmente el logo y el contenido principal */
-  justify-content: space-between; /* Opcional: para separar logo del resto, o usa flex-start y márgenes */
-  width: 100%;
-  max-width: 100vw; /* Asegura que el header no exceda el ancho de la ventana */
+  background-color:#006400; /* Color de fondo verde oscuro */
+  color: white; /* Color de texto general para el header */
+  font-size: 1.4em; /* Tamaño de fuente general */
+  font-family: 'Poppins', sans-serif; /* Asegúrate de que Poppins esté importado si lo usas */
+  padding: 12px 20px; /* Relleno interno */
+  display: flex; /* Habilita Flexbox */
+  flex-direction: row; /* Coloca los elementos hijos en una fila */
+  align-items: center; /* Centra los elementos hijos verticalmente */
+  justify-content: space-between; /* Empuja el primer hijo a la izquierda y el último a la derecha */
+  width: 100%; /* Asegura que el header ocupe el 100% del ancho disponible */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
 }
 
 /* --- ESTILOS PARA EL LOGO --- */
 .site-logo {
-  height: 100px; /* AJUSTADO: Tamaño del logo incrementado */
-  width: auto;
-  display: block; /* Asegura que el logo se comporte como un bloque */
+  height: 100px; /* Tamaño del logo. Ajusta según tus preferencias. */
+  width: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Elimina cualquier espacio adicional debajo de la imagen */
+  flex-shrink: 0; /* Evita que el logo se encoja si no hay espacio */
 }
 
-/* --- ESTILOS PARA EL CONTENEDOR DE NAVEGACIÓN DE BOOTSTRAP --- */
+/* --- ESTILOS PARA LA NAVEGACIÓN DE BOOTSTRAP --- */
 /*
-   Este bloque es crucial. Asegura que el div.navbar-collapse
-   ocupe el espacio restante y alinee su contenido (los ítems del menú)
-   a la derecha.
+   Estas reglas son clave para que tu navegación se comporte como esperas
+   dentro de Flexbox y anule algunos comportamientos predeterminados de Bootstrap.
 */
-.navbar-collapse {
-    flex-grow: 1; /* Permite que el contenido del menú ocupe el espacio restante en la fila */
-    justify-content: flex-end; /* Alinea los ítems de la navegación a la derecha dentro de este contenedor */
-    /* IMPORTANTE: Si ves que en pantallas grandes el menú no llega al final,
-       asegúrate de que no haya un .container de Bootstrap envolviendo directamente la <nav> en tu HTML
-       o si lo hay, que no esté limitando su ancho de forma que impida el flex-end.
-       En tu HTML, ya eliminaste el .container que envolvía la nav, lo cual es bueno.
-    */
+.navbar {
+    padding: 0; /* Quita el padding predeterminado de Bootstrap en la navbar */
+    flex-grow: 1; /* Permite que la navbar ocupe el espacio restante */
+    display: flex; /* Asegura que la navbar sea un contenedor flex también */
+    justify-content: flex-end; /* Alinea el contenido de la navbar (el colapsable) a la derecha */
+    width: auto; /* Permite que el ancho se ajuste al contenido */
 }
 
-/* --- ESTILOS PARA LA NAVEGACIÓN (UL, LI, A) --- */
-nav ul {
+.navbar-collapse {
+    flex-grow: 0 !important; /* Anula el flex-grow de Bootstrap si interfiere con la alineación */
+    justify-content: flex-end !important; /* FUERZA la alineación a la derecha de los ítems de navegación */
+    width: auto; /* Asegura que no ocupe todo el ancho si no es necesario */
+}
+
+/* Asegura que la lista de enlaces no esté centrada por defecto si Bootstrap lo aplica */
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end; /* Alinea los ítems de la lista a la derecha */
+    width: 100%; /* Asegura que la lista ocupe el ancho disponible para alinear sus ítems */
+}
+
+nav ul { /* Esto también se aplica a .navbar-nav si no es sobreescrito */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -52,8 +71,8 @@ nav li:last-child {
 }
 
 nav a {
-  font-family: poppins; /* Consistente con el header */
-  color: white; /* AJUSTADO: Color del texto de los enlaces a blanco para la imagen */
+  font-family: 'Poppins', sans-serif; /* Consistente con el header */
+  color: white !important; /* ¡Aseguramos el blanco para el texto! */
   text-decoration: none;
   font-size: 1.3em;
   padding: 5px 10px;
@@ -63,9 +82,7 @@ nav a {
 }
 
 nav a:hover {
-  color: chocolate; /* AJUSTADO: Color del texto al pasar el mouse */
-  /* background-color: saddlebrown; */
-  /* font-size: 1.25em; */ /* Comentado si no lo quieres */
+  color: chocolate !important; /* ¡Aseguramos el chocolate al pasar el ratón! */
   transform: translateY(-2px);
 }
 
@@ -73,48 +90,39 @@ nav a:hover {
 
 .hero-slider {
   position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
-  border-radius: 0;
-  box-shadow: none;
-  overflow: hidden;
-}
-
-.slide img {
-  width: 98vw;
-  min-width: 100vw; /* Asegura que la imagen sea al menos 100vw */
-  max-width: 100vw; /* Asegura que la imagen no exceda 100vw */
-  height: auto;
-  display: block;
-  object-fit: cover;
+  width: 100%; /* Cambiado de 100vw a 100% */
+  margin: 0 auto; /* Centra el slider */
+  max-width: 100%; /* Asegura que no se desborde */
+  overflow: hidden; /* ¡CRÍTICO! Oculta los slides que no están visibles */
+  /* border-radius: 0; */
+  /* box-shadow: none; */
 }
 
 .slides-container {
-  display: flex;
+  display: flex; /* ¡CRÍTICO! Pone los slides uno al lado del otro */
   transition: transform 0.5s ease-in-out;
-  /* El ancho total será 100% * número de slides (manejado por JS al calcular la posición) */
+  width: auto;
+}
+
+.slide {
+  flex-shrink: 0; /* ¡CRÍTICO! Evita que los slides se encojan */
+  width: 100%; /* Cada slide ocupa el 100% del ancho de su contenedor (.hero-slider) */
+  height: auto; /* Ajusta la altura automáticamente */
+  display: block;
+}
+
+.slide img {
+  width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor (.slide) */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block;
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
 }
 
 /* --- ESTILOS GENERALES DE IMAGEN --- */
-img { /* Esta regla afecta a todas las imágenes que no tienen una regla más específica */
+img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* Duplicado de .slide img, pero más específico para las imágenes dentro de un slide.
-   Asegura que las imágenes dentro del carrusel se comporten como se espera. */
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  /* Opcional: Si quieres que todas las imágenes tengan la misma altura y se recorten si es necesario */
-  /* max-height: 450px; */
-  object-fit: cover;
 }
 
 /* --- ESTILOS PARA LOS PUNTOS DE NAVEGACIÓN (DOTS) --- */
@@ -146,8 +154,6 @@ img { /* Esta regla afecta a todas las imágenes que no tienen una regla más es
 
 .dot.active {
   background-color: #4CAF50;
-  /* O puedes usar el color de tu marca, por ejemplo: */
-  /* background-color: chocolate; */
 }
 
 /* --- OPCIONAL: ESTILOS PARA FLECHAS DE NAVEGACIÓN --- */
@@ -181,23 +187,13 @@ img { /* Esta regla afecta a todas las imágenes que no tienen una regla más es
 
 /* --- ESTILOS PARA PÁRRAFOS --- */
 p {
-  font-family: cursive; /* Mantenido como cursive, si quieres poppins, cámbialo aquí */
+  font-family: popins sans-serif;
 }
 
 /* --- MEDIA QUERIES --- */
 
 /* Para Tablets y móviles grandes en horizontal (ej. hasta 1023px) */
 @media (max-width: 1023px) {
-  /*
-    Comentado: header h1 ya no existe directamente en el header según el HTML modificado.
-    Si el h1 aparece en otra parte de tu HTML, esta regla no lo afectará.
-  */
-  /*
-  header h1 {
-    font-size: 2.8em;
-  }
-  */
-
   nav li {
     margin-right: 15px;
   }
@@ -207,58 +203,46 @@ p {
   }
 
   .hero-slider {
-    max-width: 90%;
+    max-width: 100%; /* Cambiado de 100vw a 100% */
+  }
+  .slide img {
+      width: 100%; /* Cambiado de 100vw a 100% */
   }
 }
-
 
 /* Para Móviles (ej. hasta 767px) */
 @media (max-width: 767px) {
   header {
-    flex-direction: column; /* Logo y navegación se apilan verticalmente */
+    flex-direction: column; /* Logo y navegación se apilan */
     padding: 15px;
-    text-align: center; /* Centra el contenido en columnas */
+    text-align: center;
   }
 
   .site-logo {
-    height: 100px; /* Reducimos el logo en móviles */
-    margin-right: 0; /* Quita margen derecho cuando está en columna */
-    margin-bottom: 15px; /* Espacio debajo del logo */
-  }
-
-  /*
-    Comentado: header-main-content y header h1 ya no existen en el HTML principal para el header.
-    Estas reglas ya no deberían aplicarse.
-  */
-  /*
-  .header-main-content {
-    align-items: center;
-    width: 100%;
-  }
-
-  header h1 {
-    font-size: 2.2em;
+    height: 100px; /* Logo más pequeño en móviles */
+    margin-right: 0;
     margin-bottom: 15px;
   }
-  */
 
-  /* Ajuste para que el menú esté centrado en móviles */
   .navbar-collapse {
-      justify-content: center; /* Centra los ítems del menú colapsado */
-      /* Elimina flex-grow si causa problemas de espacio en móvil, o ajústalo */
-      flex-grow: unset; /* Quita el grow para que no empuje el contenido */
+      justify-content: center !important; /* FUERZA el centrado del menú en móviles */
+      flex-grow: unset !important; /* Desactiva el grow de Bootstrap */
+  }
+
+  .navbar-nav {
+      justify-content: center; /* Centra la lista de enlaces en móviles */
   }
 
   nav ul {
-    flex-direction: column; /* Ítems de menú apilados verticalmente */
-    align-items: center;    /* Centra los ítems individualmente */
+    flex-direction: column;
+    align-items: center;
     width: 100%;
   }
 
   nav li {
     margin-right: 0;
     margin-bottom: 10px;
-    width: 100%; /* Permite que cada ítem de lista ocupe todo el ancho disponible */
+    width: 100%;
   }
 
   nav li:last-child {
@@ -267,26 +251,16 @@ p {
 
   nav a {
     font-size: 1.1em;
-    display: block; /* Hace que el enlace ocupe todo el espacio del li */
+    display: block;
     text-align: center;
     padding: 10px;
   }
 
-  nav a:hover {
-    font-size: 1.15em;
-    /* El transform translateY puede ser molesto en móvil si causa mucho reflow */
-  }
-
   /* Ajustes para el Hero Slider en móviles */
   .hero-slider {
-    max-width: 100%;
+    max-width: 100%; /* Ocupa todo el ancho en móviles */
     margin: 15px auto;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .slide img {
-    /* Si definiste max-height, quizás quieras ajustarlo o quitarlo para móvil */
-    /* max-height: 300px; */
   }
 
   .slider-dots {
@@ -314,28 +288,17 @@ p {
   }
 }
 
-
 /* Para Móviles muy pequeños (opcional, ej. hasta 480px) */
 @media (max-width: 480px) {
   .site-logo {
-    height: 80px; /* Logo más pequeño en móviles muy pequeños */
+    height: 60px;
   }
-
-  /*
-    Comentado: header h1 ya no existe en el HTML principal para el header.
-  */
-  /*
-  header h1 {
-    font-size: 1.8em;
-  }
-  */
 
   nav a {
     font-size: 1em;
     padding: 8px;
   }
 
-  /* Si necesitas más ajustes finos para el carrusel en pantallas muy pequeñas */
   .slider-dots {
     gap: 5px;
   }
