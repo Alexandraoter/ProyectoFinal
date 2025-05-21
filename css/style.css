@@ -4,7 +4,7 @@ header {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; */
-  background-color: bisque;
+  background-color: 2B5433;
   font-family: cursive;
   /* color: chocolate; /* Lo quitamos de aquí, se aplicará al h1 */
   padding: 12px 20px; /* Aumentamos un poco el padding horizontal para el logo */
@@ -33,7 +33,7 @@ header {
 header h1 {
   margin: 0 0 10px 0; /* Margen inferior para separar del nav */
   font-size: 3.5em;
-  color: chocolate; /* Color del texto de "Huellitas de Amor" */
+  color:rgb(255, 255, 255); /* Color del texto de "Huellitas de Amor" */
   /* font-family: cursive; /* Ya está heredado de header o body si lo tienes ahí */
 }
 
