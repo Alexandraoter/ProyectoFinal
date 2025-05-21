@@ -1,51 +1,41 @@
 header {
-  /* ---  PARA EL FONDO DEL HEADER
-  background-image: url('/img/DogCat.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat; */
-  background-color:#4CAF50;
-  font-family: cursive;
+  background-color:#006400;
+  color: white; /* Añadido: Establece el color de texto por defecto del header a blanco */
+  font-family: poppins; /* Usas poppins aquí y en nav a, lo cual es consistente. */
   /* color: chocolate; /* Lo quitamos de aquí, se aplicará al h1 */
-  padding: 12px 20px; /* Aumentamos un poco el padding horizontal para el logo */
+  padding: 8px 20px; /* Aumentamos un poco el padding horizontal para el logo */
   display: flex;
-  flex-direction: row;   /* CAMBIO: Para alinear logo y contenido principal horizontalmente */
-  align-items: center;   /* CAMBIO: Para centrar verticalmente el logo y el contenido principal */
+  flex-direction: row;    /* CAMBIO: Para alinear logo y contenido principal horizontalmente */
+  align-items: center;    /* CAMBIO: Para centrar verticalmente el logo y el contenido principal */
   justify-content: space-between; /* Opcional: para separar logo del resto, o usa flex-start y márgenes */
+  width: 100%;
+  max-width: 100vw; /* Asegura que el header no exceda el ancho de la ventana */
 }
 
 /* --- ESTILOS PARA EL LOGO --- */
 .site-logo {
-  height: 100px; /* <<<---- AJUSTA ESTE VALOR */
+  height: 100px; /* AJUSTADO: Tamaño del logo incrementado */
   width: auto;
-  margin-right: 20px;
+  display: block; /* Asegura que el logo se comporte como un bloque */
 }
 
-/* --- CONTENEDOR PARA TÍTULO Y NAVEGACIÓN --- */
-.header-main-content {
- 
-  display: flex;
-  flex-direction: column; /* H1 y Nav uno encima del otro */
-  align-items: center;    /* Centra el H1 y Nav horizontalmente dentro de este bloque */
-  flex-grow: 1; /* Permite que este bloque ocupe el espacio restante si es necesario */
+/* --- ESTILOS PARA EL CONTENEDOR DE NAVEGACIÓN DE BOOTSTRAP --- */
+/*
+   Este bloque es crucial. Asegura que el div.navbar-collapse
+   ocupe el espacio restante y alinee su contenido (los ítems del menú)
+   a la derecha.
+*/
+.navbar-collapse {
+    flex-grow: 1; /* Permite que el contenido del menú ocupe el espacio restante en la fila */
+    justify-content: flex-end; /* Alinea los ítems de la navegación a la derecha dentro de este contenedor */
+    /* IMPORTANTE: Si ves que en pantallas grandes el menú no llega al final,
+       asegúrate de que no haya un .container de Bootstrap envolviendo directamente la <nav> en tu HTML
+       o si lo hay, que no esté limitando su ancho de forma que impida el flex-end.
+       En tu HTML, ya eliminaste el .container que envolvía la nav, lo cual es bueno.
+    */
 }
 
-header h1 {
-  margin: 0 0 10px 0; /* Margen inferior para separar del nav */
-  font-size: 3.5em;
-  color:rgb(255, 255, 255); /* Color del texto de "Huellitas de Amor" */
-  /* font-family: cursive; /* Ya está heredado de header o body si lo tienes ahí */
-}
-
-/* El .container que ya tenías puede seguir igual o puedes quitarlo
- si .header-main-content ya hace el centrado que necesitas para el nav */
-.container {
-  /* width: 90%; */ /* Si lo necesitas para limitar el ancho del nav */
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */ /* No necesario si .header-main-content ya centra */
-}
-
-
+/* --- ESTILOS PARA LA NAVEGACIÓN (UL, LI, A) --- */
 nav ul {
   list-style: none;
   padding: 0;
@@ -62,115 +52,105 @@ nav li:last-child {
 }
 
 nav a {
-  font-family: cursive;
-  color: chocolate;
+  font-family: poppins; /* Consistente con el header */
+  color: white; /* AJUSTADO: Color del texto de los enlaces a blanco para la imagen */
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1.3em;
   padding: 5px 10px;
   border-radius: 5px;
   display: inline-block;
   transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
 }
 
-nav a:not(:first-child) {
-  color: black;
-}
-
 nav a:hover {
-  color: white;
-  background-color: saddlebrown;
-  font-size: 1.25em;
+  color: chocolate; /* AJUSTADO: Color del texto al pasar el mouse */
+  /* background-color: saddlebrown; */
+  /* font-size: 1.25em; */ /* Comentado si no lo quieres */
   transform: translateY(-2px);
 }
 
-/* Estilos para el Hero Slider / Carrusel */
+/* --- ESTILOS PARA EL HERO SLIDER / CARRUSEL --- */
 
 .hero-slider {
   position: relative;
-  width: 100vw;         /* Ocupa todo el ancho de la ventana */
+  width: 100vw;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;   /* Centra el slider fuera del flujo del container */
+  margin-left: -50vw;
   margin-right: -50vw;
-  max-width: 100vw;     /* Elimina el límite de 1000px */
-  border-radius: 0;     /* Opcional: sin bordes redondeados */
-  box-shadow: none;     /* Opcional: sin sombra */
+  max-width: 100vw;
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
 }
 
 .slide img {
-  width: 100vw;         /* Imagen ocupa todo el ancho de la ventana */
-  min-width: 100vw;
-  max-width: 100vw;
+  width: 98vw;
+  min-width: 100vw; /* Asegura que la imagen sea al menos 100vw */
+  max-width: 100vw; /* Asegura que la imagen no exceda 100vw */
   height: auto;
   display: block;
   object-fit: cover;
-  
 }
-
-
 
 .slides-container {
-  display: flex; /* Coloca los slides (imágenes) uno al lado del otro */
-  transition: transform 0.5s ease-in-out; /* Animación suave al cambiar de slide */
+  display: flex;
+  transition: transform 0.5s ease-in-out;
   /* El ancho total será 100% * número de slides (manejado por JS al calcular la posición) */
-
-
 }
 
-img {
+/* --- ESTILOS GENERALES DE IMAGEN --- */
+img { /* Esta regla afecta a todas las imágenes que no tienen una regla más específica */
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Duplicado de .slide img, pero más específico para las imágenes dentro de un slide.
+   Asegura que las imágenes dentro del carrusel se comporten como se espera. */
 .slide img {
-  width: 100%;        /* La imagen ocupa todo el ancho del slide */
-  height: auto;       /* Mantiene la proporción original de la imagen */
-  display: block;     /* Elimina cualquier espacio extra debajo de la imagen */
+  width: 100%;
+  height: auto;
+  display: block;
   /* Opcional: Si quieres que todas las imágenes tengan la misma altura y se recorten si es necesario */
-  /* max-height: 450px; */ /* Define una altura máxima */
-   object-fit: cover; 
+  /* max-height: 450px; */
+  object-fit: cover;
 }
 
-/* Estilos para los puntos de navegación (dots) */
+/* --- ESTILOS PARA LOS PUNTOS DE NAVEGACIÓN (DOTS) --- */
 .slider-dots {
-  position: absolute; /* Posiciona los puntos sobre el carrusel */
-  bottom: 15px;       /* Distancia desde el borde inferior */
-  left: 50%;          /* Centra horizontalmente */
-  transform: translateX(-50%); /* Ajuste fino para el centrado exacto */
-  display: flex;      /* Coloca los puntos en línea */
-  gap: 8px;          /* Espacio entre los puntos */
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
   padding: 5px;
-  background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente para los puntos */
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
-
-
-
 
 .dot {
   width: 10px;
   height: 10px;
-  background-color: rgba(255, 255, 255, 0.6); /* Color de punto inactivo (blanco semi-transparente) */
-  border-radius: 50%; /* Hace que sean círculos */
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  border: 1px solid rgba(0,0,0,0.2); /* Borde sutil */
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 .dot:hover {
-  transform: scale(1.2); /* Agranda un poco el punto al pasar el mouse */
+  transform: scale(1.2);
 }
 
 .dot.active {
-  background-color: #4CAF50; /* Color del punto activo (verde, como en tu ejemplo) */
+  background-color: #4CAF50;
   /* O puedes usar el color de tu marca, por ejemplo: */
   /* background-color: chocolate; */
 }
 
-
-/* Opcional: Estilos para flechas de navegación */
+/* --- OPCIONAL: ESTILOS PARA FLECHAS DE NAVEGACIÓN --- */
 .slider-nav {
   position: absolute;
   top: 50%;
@@ -182,7 +162,7 @@ img {
   font-size: 24px;
   line-height: 1;
   cursor: pointer;
-  z-index: 10; /* Asegura que estén por encima de las imágenes */
+  z-index: 10;
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
@@ -199,29 +179,35 @@ img {
   right: 15px;
 }
 
-
+/* --- ESTILOS PARA PÁRRAFOS --- */
 p {
-  font-family: cursive;
+  font-family: cursive; /* Mantenido como cursive, si quieres poppins, cámbialo aquí */
 }
 
 /* --- MEDIA QUERIES --- */
 
 /* Para Tablets y móviles grandes en horizontal (ej. hasta 1023px) */
 @media (max-width: 1023px) {
+  /*
+    Comentado: header h1 ya no existe directamente en el header según el HTML modificado.
+    Si el h1 aparece en otra parte de tu HTML, esta regla no lo afectará.
+  */
+  /*
   header h1 {
-    font-size: 2.8em; /* Reducimos un poco el título */
+    font-size: 2.8em;
   }
+  */
 
   nav li {
-    margin-right: 15px; /* Menos espacio entre elementos del menú */
+    margin-right: 15px;
   }
 
   nav a {
-    font-size: 1em; /* Ligeramente más pequeño el texto del menú */
+    font-size: 1em;
   }
 
   .hero-slider {
-    max-width: 90%; /* Que no ocupe tanto en tablets */
+    max-width: 90%;
   }
 }
 
@@ -229,37 +215,50 @@ p {
 /* Para Móviles (ej. hasta 767px) */
 @media (max-width: 767px) {
   header {
-    flex-direction: column; /* Logo y contenido principal uno encima del otro */
+    flex-direction: column; /* Logo y navegación se apilan verticalmente */
     padding: 15px;
-    text-align: center; /* Centrar todo cuando está en columna */
+    text-align: center; /* Centra el contenido en columnas */
   }
 
   .site-logo {
-    height: 70px; /* Hacemos el logo más pequeño */
-    margin-right: 0; /* Quitamos margen derecho ya que estará centrado */
-    margin-bottom: 15px; /* Espacio entre el logo y el título/nav */
+    height: 100px; /* Reducimos el logo en móviles */
+    margin-right: 0; /* Quita margen derecho cuando está en columna */
+    margin-bottom: 15px; /* Espacio debajo del logo */
   }
 
+  /*
+    Comentado: header-main-content y header h1 ya no existen en el HTML principal para el header.
+    Estas reglas ya no deberían aplicarse.
+  */
+  /*
   .header-main-content {
-    align-items: center; /* Ya lo tenías, pero es bueno confirmarlo */
-    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    align-items: center;
+    width: 100%;
   }
 
   header h1 {
-    font-size: 2.2em; /* Título considerablemente más pequeño */
-    margin-bottom: 15px; /* Más espacio antes del nav */
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+  */
+
+  /* Ajuste para que el menú esté centrado en móviles */
+  .navbar-collapse {
+      justify-content: center; /* Centra los ítems del menú colapsado */
+      /* Elimina flex-grow si causa problemas de espacio en móvil, o ajústalo */
+      flex-grow: unset; /* Quita el grow para que no empuje el contenido */
   }
 
   nav ul {
-    flex-direction: column; /* Apilamos los elementos del menú verticalmente */
-    align-items: center;  /* Centramos los elementos del menú */
-    width: 100%; /* Que la lista ocupe el ancho */
+    flex-direction: column; /* Ítems de menú apilados verticalmente */
+    align-items: center;    /* Centra los ítems individualmente */
+    width: 100%;
   }
 
   nav li {
-    margin-right: 0; /* Sin margen derecho */
-    margin-bottom: 10px; /* Espacio entre elementos del menú apilados */
-    width: 100%; /* Opcional: hacer que cada item ocupe el ancho para mejor toque */
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%; /* Permite que cada ítem de lista ocupe todo el ancho disponible */
   }
 
   nav li:last-child {
@@ -267,22 +266,22 @@ p {
   }
 
   nav a {
-    font-size: 1.1em; /* Podemos mantener o incluso aumentar un poco para facilitar el toque */
-    display: block; /* Hacemos que el enlace ocupe todo el espacio del li */
+    font-size: 1.1em;
+    display: block; /* Hace que el enlace ocupe todo el espacio del li */
     text-align: center;
-    padding: 10px; /* Más padding para mejor área de toque */
+    padding: 10px;
   }
 
   nav a:hover {
-    font-size: 1.15em; /* Ajustar el hover si es necesario */
+    font-size: 1.15em;
     /* El transform translateY puede ser molesto en móvil si causa mucho reflow */
   }
 
   /* Ajustes para el Hero Slider en móviles */
   .hero-slider {
-    max-width: 100%; /* Que ocupe todo el ancho disponible, ya tiene padding el body o contenedor padre */
+    max-width: 100%;
     margin: 15px auto;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
   .slide img {
@@ -291,7 +290,7 @@ p {
   }
 
   .slider-dots {
-    bottom: 10px; /* Un poco menos de espacio desde abajo */
+    bottom: 10px;
     padding: 4px;
     gap: 6px;
   }
@@ -302,7 +301,7 @@ p {
   }
 
   .slider-nav {
-    font-size: 18px; /* Flechas más pequeñas */
+    font-size: 18px;
     padding: 6px 10px;
   }
 
@@ -319,12 +318,17 @@ p {
 /* Para Móviles muy pequeños (opcional, ej. hasta 480px) */
 @media (max-width: 480px) {
   .site-logo {
-    height: 60px;
+    height: 80px; /* Logo más pequeño en móviles muy pequeños */
   }
 
+  /*
+    Comentado: header h1 ya no existe en el HTML principal para el header.
+  */
+  /*
   header h1 {
     font-size: 1.8em;
   }
+  */
 
   nav a {
     font-size: 1em;
