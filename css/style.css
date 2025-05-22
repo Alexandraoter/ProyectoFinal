@@ -2,15 +2,16 @@
 body {
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */ /* Quita esta línea temporalmente para depurar el ancho real */
+    /* overflow-x: hidden;  /* Quita esta línea temporalmente para depurar el ancho real */
     box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
+    width: 100vw; /* Asegura que el body ocupe el 100% del viewport width */
 }
 
 /* --- ESTILOS PARA EL HEADER --- */
 header {
   background-color:#006400; /* Color de fondo verde oscuro */
   color: white; /* Color de texto general para el header */
-  font-size: 1.4em; /* Tamaño de fuente general */
+  font-size: 1.0em; /* Tamaño de fuente general */
   font-family: 'Poppins', sans-serif; /* Asegúrate de que Poppins esté importado si lo usas */
   padding: 12px 20px; /* Relleno interno */
   display: flex; /* Habilita Flexbox */
@@ -94,10 +95,8 @@ nav a:hover {
   margin: 0 auto; /* Centra el slider */
   max-width: 100%; /* Asegura que no se desborde */
   overflow: hidden; /* ¡CRÍTICO! Oculta los slides que no están visibles */
-  /* border-radius: 0; */
-  /* box-shadow: none; */
-}
 
+}
 .slides-container {
   display: flex; /* ¡CRÍTICO! Pone los slides uno al lado del otro */
   transition: transform 0.5s ease-in-out;
@@ -118,6 +117,8 @@ nav a:hover {
   object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
 }
 
+
+
 /* --- ESTILOS GENERALES DE IMAGEN --- */
 img {
   max-width: 100%;
@@ -135,7 +136,8 @@ img {
   gap: 8px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  border-radius: 8px;
+  z-index: 10; /* Asegura que estén por encima de la imagen */
 }
 
 .dot {
@@ -261,6 +263,7 @@ p {
     max-width: 100%; /* Ocupa todo el ancho en móviles */
     margin: 15px auto;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    height: 250px; /* Ajusta la altura para móviles */
   }
 
   .slider-dots {
@@ -275,7 +278,7 @@ p {
   }
 
   .slider-nav {
-    font-size: 18px;
+    font-size: 14px;
     padding: 6px 10px;
   }
 
@@ -304,7 +307,7 @@ p {
   }
 
   .slider-nav {
-    font-size: 16px;
+    font-size: 14px;
     padding: 5px 8px;
   }
 }
@@ -360,7 +363,7 @@ p {
 /* Estilos para los iconos sociales */
 .main-footer .social-icons a {
     color: white;
-    font-size: 1.9em;
+    font-size: 1.5em;
     margin-right: 15px;
     transition: color 0.3s ease;
 }
@@ -384,7 +387,7 @@ p {
 }
 
 .main-footer .footer-bottom p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: rgba(255, 255, 255, 0.6);
     margin: 0;
 }
