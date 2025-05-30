@@ -1,0 +1,5 @@
+# Ignorar la carpeta de configuración de VS Code
+.vscode/
+
+# Ignorar archivos de espacio de trabajo
+*.code-workspace

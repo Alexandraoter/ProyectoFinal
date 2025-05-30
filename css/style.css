@@ -24,7 +24,7 @@ header {
 
 /* --- ESTILOS PARA EL LOGO --- */
 .site-logo {
-  height: 100px; /* Tamaño del logo. Ajusta según tus preferencias. */
+  height: 50px; /* Tamaño del logo. Ajusta según tus preferencias. */
   width: auto; /* Mantiene la proporción de la imagen */
   display: block; /* Elimina cualquier espacio adicional debajo de la imagen */
   flex-shrink: 0; /* Evita que el logo se encoja si no hay espacio */
@@ -95,6 +95,8 @@ nav a:hover {
   margin: 0 auto; /* Centra el slider */
   max-width: 100%; /* Asegura que no se desborde */
   overflow: hidden; /* ¡CRÍTICO! Oculta los slides que no están visibles */
+   /* min-height: 400px; */
+  height: 400px;
 
 }
 .slides-container {
@@ -112,9 +114,9 @@ nav a:hover {
 
 .slide img {
   width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor (.slide) */
-  height: auto; /* Mantiene la proporción de la imagen */
+  height: 400px; /* Mantiene la proporción de la imagen */
   display: block;
-  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  object-fit: contain; /* Asegura que la imagen cubra el área sin deformarse */
 }
 
 
@@ -415,3 +417,68 @@ p {
         width: 100%;
     }
 }
+
+
+/* --- SECCIÓN "¿Listo para adoptar?" EN FILA --- */
+.adopcion-pasos-fila {
+  font-family: 'Poppins', sans-serif;
+}
+
+.adopcion-pasos-fila h2{
+  font-family: 'Merriweather';
+}
+
+.adopcion-pasos-fila .subtitulo {
+  color: #3C1E07;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.paso-fila {
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.paso-circulo {
+  width: 60px;
+  height: 60px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.paso-texto {
+  font-size: 1rem;
+  color: #333;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.paso-linea {
+  width: 2px;
+  height: 40px;
+  background-color: #bbb;
+}
+
+@media (max-width: 576px) {
+  .paso-fila {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .paso-texto {
+    text-align: center !important;
+    margin-top: 10px;
+  }
+
+  .paso-fila h3 {
+    margin-top: 10px;
+  }
+
+  .paso-linea {
+    height: 30px;
+  }
+}
+
+
