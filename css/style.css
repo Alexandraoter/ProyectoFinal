@@ -420,194 +420,130 @@ p {
 }
 
 
-/*Bm 27/05/25*/
- /* --- SECCIÓN DE PROCESO DE ADOPCIÓN --- */
-        .adoption-process {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2d5016;
-            margin-bottom: 20px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .process-step {
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .process-step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-            border-color: #4a7c59;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #4a7c59, #2d5016);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 20px;
-        }
-
-        .step-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2d5016;
-            margin-bottom: 15px;
-        }
-
-        .step-description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* --- SECCIÓN DE TESTIMONIOS --- */
-        .testimonials {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #4a7c59, #2d5016);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-        }
-
-        .author-info h5 {
-            margin: 0;
-            color: #2d5016;
-            font-weight: 600;
-        }
-
-        .author-info small {
-            color: #888;
-        }
-
-
-#About {
-    background-color: var(--section-color-blue);
-    color: var(--colors-clear--paragraph);
+/* --- SECCIÓN "¿Listo para adoptar?" EN FILA --- */
+.adopcion-pasos-fila {
+  font-family: 'Poppins', sans-serif;
 }
 
-#About h2 {
+.adopcion-pasos-fila h2{
+  font-family: 'Merriweather';
+}
+
+.adopcion-pasos-fila .subtitulo {
+  color: #3C1E07;
+  font-size: 30px;
+}
+
+.paso-fila {
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.paso-circulo {
+  width: 210px;
+  height: 210px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.paso-numero{
+  font-size: 90px;
+  font-family: Merriweather;
+  font-style: italic;
+  font-weight: bold;
+  color: #CE6A22;
+}
+
+.paso-texto {
+  font-size: 2rem;
+  color: #333;
+  max-width: 400px;
+  line-height: 1.4;
+  font-family: poppins;
+  font-weight: bold;
+}
+
+.paso-linea {
+  width: 5px;
+  height: 70px;
+  background-color: #CE6A22;
+}
+
+@media (max-width: 576px) {
+  .paso-fila {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 10px;
-    padding-top: 14px;
+  }
+
+  .paso-texto {
+    text-align: center !important;
+    margin-top: 10px;
+  }
+
+  .paso-fila h3 {
+    margin-top: 10px;
+  }
+
+  .paso-linea {
+    height: 30px;
+  }
 }
 
-#About h3 {
-    text-align: center;
-    margin-bottom: 30px;
+/* --- SECCIÓN "Testimonios" --- */
+
+.seccion-testimonios h2{
+  color: #2B5433;
+  font-family: 'Merriweather';
 }
 
-.section-sobre {
-    display: flex;
+.seccion-testimonios .subtitulo {
+  color: #3C1E07;
+  font-size: 30px;
 }
 
-.section-sobre .desc-side {
-    justify-content: center;
-    
+.card-testimonio {
+  background-color: #265D3A; /* Verde oscuro */
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+  height: 100%;
+  width: 352px;
 }
 
-.section-sobre .desc-side p {
-    font-size: 17px;
-    line-height: 24px;
+.img-testimonio {
+  width: 255px;
+  height: 255px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin: 0 auto;
 }
 
-.section-sobre .desc-side .btn-about {
-    background-color: var(--section-color-white);
+.card-testimonio .frase {
+  font-size: 21px;
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
 
-.section-sobre .desc-side .btn-about a {
-    color: var(--color-botton-form);
+.card-testimonio .autor {
+  font-size: 16px;
+  font-family: poppins;
+  font-style: italic;
+  color: #dcdcdc;
+  margin-bottom: 0;
 }
 
-.section-sobre .img-side {
-    width: 500px;
-    text-align: center;
-  
+/* --- SECCIÓN CÓMO APORTAR Y PREGUNTAS FRECUENTES --- */
+
+.seccion-como-aportar img,
+.seccion-preguntas img {
+  width: 100%; /* Altura ajustada para uniformidad */
+  height: 550px; /* Altura ajustada para uniformidad */
+  object-fit: cover; /* Recorta las imágenes para ajustarse */
 }
 
-.section-sobre .img-side img {
-    width: 450px;
-    padding-bottom: 18px;
-      border-radius: 14%;
-}
-
-
-/* ------------Bm 27/05/25 ----------------------- end*/
