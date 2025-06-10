@@ -561,7 +561,7 @@ p {
 /* Sección: Un refugio con corazón */
 /* ======================================= */
 .refugio-corazon-section {
-    background-color: var(--color-fondo-claro); /* Fondo de la sección de borde a borde */
+    background-color: #FEF9F1; /* Fondo de la sección de borde a borde */
     padding: 80px 0; /* Padding vertical para espacio, ajusta según necesites */
     overflow: hidden; /* Para asegurar que clip-path no cree barras de desplazamiento */
 }
