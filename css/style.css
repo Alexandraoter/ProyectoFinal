@@ -9,32 +9,25 @@ body {
 
 /* --- ESTILOS PARA EL HEADER --- */
 header {
-    background-color: #006400; /* Color de fondo verde oscuro */
-    color: white; /* Color de texto general para el header */
-    font-size: 1.0em; /* Tamaño de fuente general */
-    font-family: 'Poppins', sans-serif;
-    padding: 12px 20px; /* Relleno interno */
-    display: flex; /* Habilita Flexbox */
-    flex-direction: row; /* Coloca los elementos hijos en una fila */
-    align-items: center; /* Centra los elementos hijos verticalmente */
-    justify-content: space-between; /* Empuja el primer hijo a la izquierda y el último a la derecha */
-    width: 100%; /* Asegura que el header ocupe el 100% del ancho disponible */
-    box-sizing: border-box; /* Incluye padding en el ancho total */
-    /* Añadimos posicionamiento fijo aquí para que el header se mantenga visible */
-    position: fixed; /* Hace que el encabezado se mantenga visible al desplazarse */
-    top: 0; /* Lo pega a la parte superior */
-    left: 0; /* Lo pega a la parte izquierda */
-    z-index: 1030; /* Asegura que el header esté sobre otros elementos (Bootstrap usa 1020 para navbars fijos) */
+  background-color:#006400; /* Color de fondo verde oscuro */
+  color: white; /* Color de texto general para el header */
+  font-size: 1.0em; /* Tamaño de fuente general */
+  font-family: 'Poppins', sans-serif; 
+  padding: 12px 20px; /* Relleno interno */
+  display: flex; /* Habilita Flexbox */
+  flex-direction: row; /* Coloca los elementos hijos en una fila */
+  align-items: center; /* Centra los elementos hijos verticalmente */
+  justify-content: space-between; /* Empuja el primer hijo a la izquierda y el último a la derecha */
+  width: 100%; /* Asegura que el header ocupe el 100% del ancho disponible */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
 }
 
 /* --- ESTILOS PARA EL LOGO --- */
 .site-logo {
-    height: 50px;
-    width: auto;
-    display: block;
-    flex-shrink: 0;
-    /* Margin right para separar el logo del navbar-toggler o del menú */
-    margin-right: 20px;
+  height: 50px; 
+  width: auto; 
+  display: block; 
+  flex-shrink: 0; 
 }
 
 /* --- ESTILOS PARA LA NAVEGACIÓN DE BOOTSTRAP --- */
@@ -43,123 +36,52 @@ header {
     padding: 0; /* Quita el padding predeterminado de Bootstrap en la navbar */
     flex-grow: 1; /* Permite que la navbar ocupe el espacio restante */
     display: flex; /* Asegura que la navbar sea un contenedor flex también */
-    /* justify-content: flex-end;  Quitamos esto de aquí, lo pondremos en navbar-collapse o navbar-nav */
+    justify-content: flex-end; /* Alinea el contenido de la navbar (el colapsable) a la derecha */
     width: auto; /* Permite que el ancho se ajuste al contenido */
-    /* Aseguramos que el navbar esté alineado verticalmente con el logo si está dentro del header */
-    align-items: center; /* Centra verticalmente el contenido del navbar (toggler y collapse) */
 }
 
 .navbar-collapse {
-    /* Si tienes un botón navbar-toggler, éste se controla por Bootstrap.
-       Pero la lista de enlaces debe ir a la derecha. */
-    flex-grow: 0; /* Anula el flex-grow de Bootstrap si interfiere con la alineación y evita que ocupe todo el espacio innecesariamente */
-    /* justify-content: flex-end !important;  Lo movemos a .navbar-nav para mayor especificidad */
-    width: 100%; /* Asegura que el colapsable ocupe todo el ancho disponible para alinear sus ítems */
-    /* Si en pantallas pequeñas el menú colapsado aparece a la derecha y no a la izquierda (por defecto de Bootstrap) */
-    /* justify-content: flex-end; en el navbar-nav dentro de este colapsable es la solución. */
+    /*flex-grow: 0 !important;  Anula el flex-grow de Bootstrap si interfiere con la alineación */
+    justify-content: flex-end !important; /* FUERZA la alineación a la derecha de los ítems de navegación */
+    width: auto; /* Asegura que no ocupe todo el ancho si no es necesario */
 }
 
-/* Asegura que la lista de enlaces esté alineada a la derecha */
+/* Asegura que la lista de enlaces no esté centrada por defecto si Bootstrap lo aplica */
 .navbar-nav {
     display: flex;
     justify-content: flex-end; /* Alinea los ítems de la lista a la derecha */
-    width: 100%; /* Ocupa el ancho total del colapsable para que el justify-content funcione */
-    /* margin-left: auto; */ /* No necesario si justify-content: flex-end está en .navbar-nav y width: 100% */
+    width: 100%; /* Asegura que la lista ocupe el ancho disponible para alinear sus ítems */
 }
 
-/* Tus estilos de la lista de navegación interna */
-/* Asegúrate que estas reglas sobrescriban las de Bootstrap si hay conflicto */
-nav ul { /* Esto también se aplica a .navbar-nav */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Asegura que los ítems estén en fila */
-    flex-wrap: wrap; /* Permite que los ítems salten de línea en pantallas pequeñas si no hay espacio */
-    align-items: center; /* Centra los ítems verticalmente en la fila */
-    /* Si tu navbar-nav no tiene justify-content: flex-end, puedes ponerlo aquí: */
-    /* justify-content: flex-end; */
+nav ul { /* Esto también se aplica a .navbar-nav si no es sobreescrito */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
 nav li {
-    margin-right: 25px;
-    /* Asegura que los ítems no se "suban" si tienen diferente altura, aunque no suele ser un problema en li */
-    vertical-align: middle; /* Puede ayudar en algunos casos, aunque flexbox suele manejarlo */
+  margin-right: 25px;
 }
 
 nav li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 nav a {
-    font-family: 'Poppins', sans-serif;
-    color: white !important; /* ¡Importante para sobrescribir Bootstrap! */
-    text-decoration: none;
-    font-size: 1.3em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: inline-block; /* Para que el padding y el border-radius funcionen correctamente */
-    transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
-    /* Asegura que el texto y el icono estén alineados verticalmente dentro del enlace */
-    display: flex; /* Hace el enlace un contenedor flex */
-    align-items: center; /* Centra verticalmente el contenido del enlace (texto e icono) */
+  font-family: 'Poppins', sans-serif; 
+  color: white !important; 
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
 }
 
 nav a:hover {
-    color: chocolate !important; /* ¡Aseguramos el chocolate al pasar el ratón! */
-    transform: translateY(-2px);
-}
-
-/* --- Ajustes para el padding del body debido al fixed-top en el header --- */
-body {
-    /* La altura del header: 50px (logo) + 12px (padding top) + 12px (padding bottom) = 74px */
-    /* Un poco más para asegurar que no se solape, por si el logo no está en la misma línea que el navbar */
-    padding-top: 74px; /* Ajusta este valor si tu header es más alto */
-}
-
-/* --- Ajuste para que las secciones no queden ocultas bajo el navbar fijo al desplazarse --- */
-section {
-    padding-top: 80px; /* Espacio interno de la sección para que el título no quede pegado al tope */
-    margin-top: -74px; /* Margen negativo para compensar el padding-top del body y el alto del header. Ajusta al mismo valor que padding-top del body */
-    padding-bottom: 50px; /* Padding inferior de la sección */
-}
-
-/* Si tu primera sección es el hero-slider y no debe tener el padding-top/margin-top de las secciones */
-.hero-slider {
-    margin-top: 0; /* Resetea el margen negativo si se aplica por la regla 'section' general */
-    padding-top: 0; /* Resetea el padding-top si se aplica por la regla 'section' general */
-}
-
-/* Si tu logo está fuera del navbar, podrías necesitar una media query para cuando el navbar colapse,
-   para que el logo y el botón toggler no se superpongan.
-   Sin embargo, los estilos de flexbox en 'header' deberían manejar bien la mayoría de los casos. */
-
-@media (max-width: 767.98px) { /* Para pantallas pequeñas, Bootstrap colapsa el menú en md */
-    .header {
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben */
-        justify-content: center; /* Centra el logo y el toggler */
-        padding-bottom: 0; /* Ajusta el padding para que el toggler no esté muy abajo */
-    }
-    .site-logo {
-        margin-right: 0; /* Elimina el margen a la derecha del logo */
-        margin-bottom: 10px; /* Espacio debajo del logo si se envuelve */
-    }
-    .navbar {
-        width: 100%; /* La navbar ocupa todo el ancho */
-        justify-content: center; /* Centra el botón toggler */
-    }
-    .navbar-collapse {
-        width: 100%; /* El menú colapsado ocupa todo el ancho */
-    }
-    .navbar-nav {
-        flex-direction: column; /* Apila los ítems del menú verticalmente */
-        align-items: center; /* Centra los ítems apilados */
-        width: 100%;
-        margin-top: 10px; /* Espacio entre el toggler y el menú colapsado */
-    }
-    nav li {
-        margin-right: 0; /* Elimina el margen horizontal entre ítems */
-        margin-bottom: 10px; /* Espacio vertical entre ítems apilados */
-    }
+  color: chocolate !important; /* ¡Aseguramos el chocolate al pasar el ratón! */
+  transform: translateY(-2px);
 }
 
 /* --- ESTILOS PARA EL HERO SLIDER / CARRUSEL --- */
