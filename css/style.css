@@ -422,7 +422,7 @@ p {
 }
 
 .adopcion-pasos-fila h2{
-  font-family: 'Merriweather';
+  font-family: 'Poppins', sans-serif;
 }
 
 .adopcion-pasos-fila .subtitulo {
@@ -445,7 +445,7 @@ p {
 
 .paso-numero{
   font-size: 90px;
-  font-family: Merriweather;
+  font-family: 'Poppins', sans-serif;
   font-style: italic;
   font-weight: bold;
   color: #CE6A22;
@@ -456,7 +456,7 @@ p {
   color: #333;
   max-width: 400px;
   line-height: 1.4;
-  font-family: poppins;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 
@@ -491,7 +491,7 @@ p {
 
 .seccion-testimonios h2{
   color: #2B5433;
-  font-family: 'Merriweather';
+  font-family: 'Poppins', sans-serif;
 }
 
 .seccion-testimonios .subtitulo {
@@ -519,7 +519,7 @@ p {
 
 .card-testimonio .frase {
   font-size: 21px;
-  font-family: poppins;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
@@ -528,7 +528,7 @@ p {
 
 .card-testimonio .autor {
   font-size: 16px;
-  font-family: poppins;
+  font-family: 'Poppins', sans-serif;
   font-style: italic;
   color: #dcdcdc;
   margin-bottom: 0;
