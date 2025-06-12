@@ -25,17 +25,14 @@ header {
 
 /* --- ESTILOS PARA EL LOGO --- */
 .site-logo {
-  height: 50px; /* Tamaño del logo. Ajusta según tus preferencias. */
-  width: auto; /* Mantiene la proporción de la imagen */
-  display: block; /* Elimina cualquier espacio adicional debajo de la imagen */
-  flex-shrink: 0; /* Evita que el logo se encoja si no hay espacio */
+  height: 50px; 
+  width: auto; 
+  display: block; 
+  flex-shrink: 0; 
 }
 
 /* --- ESTILOS PARA LA NAVEGACIÓN DE BOOTSTRAP --- */
-/*
-   Estas reglas son clave para que tu navegación se comporte como esperas
-   dentro de Flexbox y anule algunos comportamientos predeterminados de Bootstrap.
-*/
+
 .navbar {
     padding: 0; /* Quita el padding predeterminado de Bootstrap en la navbar */
     flex-grow: 1; /* Permite que la navbar ocupe el espacio restante */
