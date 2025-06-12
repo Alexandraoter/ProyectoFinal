@@ -1,15 +1,20 @@
-<!DOCTYPE html>
+[{<!-- <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+   
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="/css/style.css">
+    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 
+    <!--ICono de huellita-->
     <link rel="icon" href="https://images.vexels.com/content/202268/preview/red-dog-footprint-flat-40fc87.png">
     <title>TLB & ROC</title>
 
@@ -25,31 +30,29 @@
       </defs>
     </svg>
 
-    <header class="fixed-header"> <nav class="navbar navbar-expand-md">
-            <div class="container-fluid"> <a class="navbar-brand" href="#"> <img src="/img/logo.png" alt="Logo The Loving Brunch & Rescues Of Cali" class="site-logo">
-                </a>
+    <header>
+        <img src="/img/logo.png" alt="Logo The Loving Brunch & Rescues Of Cali" class="site-logo">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Menú">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto"> <li class="nav-item"><a class="nav-link" href="#refugio-seccion"><i
-                                    class="fas fa-paw me-2"></i>Refugio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#pasos-adoptar-seccion"><i
-                                    class="fas fa-heart me-2"></i>Pasos para adoptar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#testimonios-seccion"><i
-                                    class="fas fa-hands-helping me-2"></i>Testimonios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#aportes-seccion"><i
-                                    class="fas fa-hand-holding-heart me-2"></i>Aportes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#preguntas-seccion">
-                            <i class="fas fa-question-circle me-2"></i>Preguntas frecuentes</a></li>
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-md fixed-top"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto"> <li class="nav-item"><a class="nav-link" href="#refugio-seccion"><i
+                                class="fas fa-paw me-2"></i>Refugio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pasos-adoptar-seccion"><i
+                                class="fas fa-heart me-2"></i>Pasos para adoptar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonios-seccion"><i
+                                class="fas fa-hands-helping me-2"></i>Testimonios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aportes-seccion"><i
+                                class="fas fa-hand-holding-heart me-2"></i>Aportes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#preguntas-seccion">
+                        <i class="fas fa-question-circle me-2"></i>Preguntas frecuentes</a></li>
+                </ul>
             </div>
         </nav>
     </header>
-
+    <!-- Se saco del div container mt-4 por que estabalimitando el tamaño de la imgs  -->
     <section class="hero-slider">
         <div class="slides-container">
             <div class="slide">
@@ -64,7 +67,9 @@
         </div>
 
         <div class="slider-dots">
-            </div>
+            <!-- Los puntos se generarán con JavaScript -->
+        </div>
+        <!-- Flechas de navegación -->
         <button class="slider-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
         <button class="slider-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
     </section>
@@ -73,28 +78,193 @@
         <div class="row my-5">
             <div class="col-md-8 mx-auto text-center">
                 <section id="refugio-seccion" class="refugio-corazon-section py-5">
-                    </section>
+                    <div class="container">
+                        <h2 class="text-center mb-5">Un refugio con corazón</h2>
+                        <div class="row align-items-center">
+                            <div class="col-md-7 text-block">
+                                <p class="text-justify">En nuestro refugio no solo rescatamos animales; rescatamos historias, rescatamos esperanzas.</p>
+                                <p class="text-justify">Somos un equipo de voluntarios, profesionales y amantes de los animales unidos por una causa: darle una segunda oportunidad a quienes han sido olvidados.</p>
+                                <p class="text-justify">Cada perrito o gatito que llega aquí lo hace con una historia distinta: algunos fueron abandonados, otros sobrevivieron al maltrato, y muchos simplemente nacieron sin un lugar seguro. En nuestro refugio encuentran cuidado, alimento, atención veterinaria… pero sobre todo, amor incondicional mientras esperan la familia que cambiará sus vidas.</p>
+                            </div>
+                            <div class="col-md-5 image-block">
+                                <img src="/img/R.jpeg" alt="Perro feliz en un refugio" class="img-fluid rounded-image">
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <section id="pasos-adoptar-seccion" class="adopcion-pasos-fila py-5 text-center">
-                    </section>
+                    <div class="container">
+                        <h2 class="text-success fw-bold mb-1 display-5">¿Listo para adoptar?</h2>
+                        <p class="fst-italic mb-5 fw-bold subtitulo">Es Fácil</p>
 
+                        <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
+                            <div class="paso-circulo me-4"></div>
+                            <h3 class="paso-numero fw-bold me-4 mb-0">1.</h3>
+                            <p class="paso-texto m-0 text-center">Conoce a los peluditos disponibles.</p>
+                        </div>
+
+                        <div class="paso-linea mx-auto mb-4"></div>
+
+                        <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
+                            <div class="paso-circulo me-4"></div>
+                            <div class="contain-container d-flex">
+                                <h3 class="paso-numero fw-bold me-4 mb-0">2.</h3>
+                                <p class="paso-texto m-0 text-center">Llena el formulario de adopción.</p>
+                            </div>
+                        </div>
+
+                        <div class="paso-linea mx-auto mb-4"></div>
+
+                        <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
+                            <div class="paso-circulo me-4"></div>
+                            <div class="contain-container d-flex">
+                                <h3 class="paso-numero fw-bold me-4 mb-0">3.</h3>
+                                <p class="paso-texto m-0 text-center">Agenda una visita o videollamada.</p>
+                            </div>
+                        </div>
+
+                        <div class="paso-linea mx-auto mb-4"></div>
+
+                        <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
+                            <div class="paso-circulo me-4"></div>
+                            <div class="contain-container d-flex">
+                                <h3 class="paso-numero fw-bold me-4 mb-0">4.</h3>
+                                <p class="paso-texto m-0 text-center">Firma el compromiso...y prepárate para recibir amor puro.</p>
+                            </div>
+                        </div>
+
+                        <p class="fst-italic mt-5 mb-5 fw-bold subtitulo">No vendemos mascotas, creamos familias.</p>
+
+                    </div>
+                </section>
                 <section id="testimonios-seccion" class="seccion-testimonios py-5 text-center">
-                    </section>
+                    <div class="container">
+                        <h2 class="display-5 fw-bold">Testimonios</h2>
+                        <p class="fst-italic mb-5 fw-bold subtitulo">Historias que inspiran</p>
 
+                        <div class="d-flex flex-row flex-wrap justify-content-between gap-4">
+                            <div class="">
+                                <div class="card-testimonio p-4">
+                                    <img src="/img/james-mcdermott-_fuZknh-yFg-unsplash.jpg" alt="Carolina con Luna"
+                                        class="img-testimonio mb-4">
+                                    <p class="frase">"Nunca imaginé cuánto cambiaría mi vida al adoptar a Luna. Ella me salvó a mí."
+                                    </p>
+                                    <p class="autor">— Carolina, adoptante feliz</p>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <div class="card-testimonio p-4">
+                                    <img src="/img/james-mcdermott-_fuZknh-yFg-unsplash.jpg" alt="Pedro con Max"
+                                        class="img-testimonio mb-4">
+                                    <p class="frase">"Adoptar a Max fue la mejor decisión. Ahora mi casa está llena de alegría y
+                                        amor."</p>
+                                    <p class="autor">— Pedro, adoptante feliz</p>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <div class="card-testimonio p-4">
+                                    <img src="/img/james-mcdermott-_fuZknh-yFg-unsplash.jpg" alt="Laura con Nala"
+                                        class="img-testimonio mb-4">
+                                    <p class="frase">"Nala llegó a mi vida para enseñarme el verdadero significado de la lealtad."
+                                    </p>
+                                    <p class="autor">— Laura, adoptante feliz</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section id="aportes-seccion" class="seccion-como-aportar bg-light py-5">
-                    </section>
-
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h3 class="text-success fw-bold mb-3"><span class="me-2">💖</span>Cómo aportar</h3>
+                                <p>Tu ayuda es vital. Con cada aporte:</p>
+                                <ul class="mb-3">
+                                    <li>Alimentamos.</li>
+                                    <li>Vacunamos.</li>
+                                    <li>Rescatamos.</li>
+                                    <li>Rehabilitamos.</li>
+                                </ul>
+                                <p><em>Puedes donar dinero, alimento, medicinas o tiempo como voluntario.</em></p>
+                                <p class="fw-semibold">Cada gesto cuenta.</p>
+                                <a href="#" class="btn btn-warning text-white fw-semibold">Has tu aporte aquí</a>
+                            </div>
+                            <div class="col-md-6 mt-4 mt-md-0 p-0">
+                                <img src="/img/Como aportar image.jpg" alt="Perro feliz" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section id="preguntas-seccion" class="seccion-preguntas bg-light py-5">
-                    </section>
-            </div>
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 p-0">
+                                <img src="/img/Dudas.jpg" alt="Cachorros" class="img-fluid rounded shadow">
+                            </div>
+
+                            <div class="col-md-6 mt-4 mt-md-0 ps-4 pt-3">
+                                <h3 class="text-success fw-bold">¿Tienes dudas?<br>Aquí las respondemos</h3>
+
+                                <p><strong>¿Puedo adoptar si vivo en apartamento?</strong><br>
+                                    ¡Claro! Solo necesitamos asegurar que el entorno sea adecuado y amoroso.</p>
+
+                                <p><strong>¿Los animales vienen vacunados?</strong><br>
+                                    Sí, todos los peludos son entregados con revisión médica, desparasitados y vacunados.</p>
+
+                                <p><strong>¿Qué incluye la adopción?</strong><br>
+                                    Amor infinito, acompañamiento, y un contrato de responsabilidad compartida.</p>
+
+                                <p><strong>¿Puedo ayudar de otra forma?</strong><br>
+                                    Sí: como voluntario, hogar de paso, o difundiendo en redes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                </div>
         </div>
     </div>
+    <!-- Fin Sección Preguntas -->
+
+
 
     <footer class="main-footer">
-        </footer>
+        <div class="container footer-content">
+            <div class="footer-section footer-logo">
+                <img src="img/logo.png" alt="The loving Brunch & Rescues of Cali Logo" class="footer-site-logo">
+                <p>Dedicados al rescate y adopción responsable de mascotas.</p>
+                <p>En memoria de todos aquellos callejeritos que murieron solos sin tener el amor y calor de un hogar
+                </p>
+            </div>
 
+            <div class="footer-section footer-info">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@TheCali.org</p>
+                <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+            </div>
+
+            <div class="footer-section footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2023 The loving Brunch & Rescues of Cali. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado para el slider -->
     <script src="js/slider.js"></script>
 </body>
 
-</html>
+</html> -->

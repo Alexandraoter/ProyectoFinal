@@ -8,100 +8,82 @@ body {
 }
 
 /* --- ESTILOS PARA EL HEADER --- */
-/* --- AJUSTES PARA EL HEADER FIJO --- */
-.fixed-header {
-    background-color: #006400; /* Tu color de fondo verde oscuro */
-    color: white; /* Color de texto general para el header */
-    font-family: 'Poppins', sans-serif;
-    position: fixed; /* Hace que el header sea fijo */
-    width: 100%; /* Ocupa todo el ancho */
-    top: 0;
-    left: 0;
-    z-index: 1030; /* Alto z-index para estar por encima de todo */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra si la tenías */
-    /* El padding del header lo manejará el .container-fluid dentro del navbar */
-    padding: 0; /* Aseguramos que el header no tenga padding extra */
+header {
+  background-color:#006400; /* Color de fondo verde oscuro */
+  color: white; /* Color de texto general para el header */
+  font-size: 1.0em; /* Tamaño de fuente general */
+  font-family: 'Poppins', sans-serif; 
+  padding: 12px 20px; /* Relleno interno */
+  display: flex; /* Habilita Flexbox */
+  flex-direction: row; /* Coloca los elementos hijos en una fila */
+  align-items: center; /* Centra los elementos hijos verticalmente */
+  justify-content: space-between; /* Empuja el primer hijo a la izquierda y el último a la derecha */
+  width: 100%; /* Asegura que el header ocupe el 100% del ancho disponible */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
 }
 
-
-/* --- ESTILOS PARA EL LOGO DENTRO DEL NAVBAR --- */
+/* --- ESTILOS PARA EL LOGO --- */
 .site-logo {
-    height: 50px; /* Ajusta la altura de tu logo */
-    width: auto; /* Mantiene la proporción */
-    /* flex-shrink: 0; ya no es tan necesario aquí por ser parte del navbar-brand */
+  height: 50px; 
+  width: auto; 
+  display: block; 
+  flex-shrink: 0; 
 }
 
 /* --- ESTILOS PARA LA NAVEGACIÓN DE BOOTSTRAP --- */
 
 .navbar {
-    padding: 0; /* Elimina el padding de Bootstrap del navbar en sí, lo maneja container-fluid */
-    background-color: transparent !important; /* Asegura que el navbar sea transparente y use el color del fixed-header */
+    padding: 0; /* Quita el padding predeterminado de Bootstrap en la navbar */
+    flex-grow: 1; /* Permite que la navbar ocupe el espacio restante */
+    display: flex; /* Asegura que la navbar sea un contenedor flex también */
+    justify-content: flex-end; /* Alinea el contenido de la navbar (el colapsable) a la derecha */
+    width: auto; /* Permite que el ancho se ajuste al contenido */
 }
 
-.navbar-brand {
-    padding-top: 0.3125rem; /* Ajustes finos de Bootstrap para la marca */
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem; /* Espacio entre el logo y el toggler/menu */
+.navbar-collapse {
+    /*flex-grow: 0 !important;  Anula el flex-grow de Bootstrap si interfiere con la alineación */
+    justify-content: flex-end !important; /* FUERZA la alineación a la derecha de los ítems de navegación */
+    width: auto; /* Asegura que no ocupe todo el ancho si no es necesario */
 }
 
+/* Asegura que la lista de enlaces no esté centrada por defecto si Bootstrap lo aplica */
 .navbar-nav {
-    /* ms-auto en HTML ya se encarga de alinear a la derecha */
-    /* justify-content: flex-end; /* No es necesario si usas ms-auto en el HTML */
-    /* flex-grow: 1; /* Esto es lo que a veces causa problemas si no se gestiona bien */
-    width: auto; /* Permite que la lista de nav se ajuste a su contenido */
+    display: flex;
+    justify-content: flex-end; /* Alinea los ítems de la lista a la derecha */
+    width: 100%; /* Asegura que la lista ocupe el ancho disponible para alinear sus ítems */
 }
 
-.nav-item {
-    margin-left: 15px; /* Espacio entre cada elemento del menú */
-    /* margin-right: 25px; // Si usas margin-left en nav-item, no uses margin-right para todos los elementos excepto el último */
+nav ul { /* Esto también se aplica a .navbar-nav si no es sobreescrito */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
-/* Solo si insistes en margin-right en vez de margin-left */
-/* nav li:last-child {
+nav li {
+  margin-right: 25px;
+}
+
+nav li:last-child {
   margin-right: 0;
-} */
-
-
-.nav-link {
-    font-family: 'Poppins', sans-serif;
-    color: white !important; /* ¡Importante para sobrescribir Bootstrap! */
-    text-decoration: none;
-    font-size: 1.3em;
-    padding: 8px 15px !important; /* Ajusta el padding para los enlaces del menú */
-    border-radius: 5px;
-    display: flex; /* Para alinear icono y texto */
-    align-items: center; /* Centra verticalmente icono y texto */
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
-.nav-link:hover {
-    color: chocolate !important; /* ¡Aseguramos el chocolate al pasar el ratón! */
-    background-color: rgba(255, 255, 255, 0.1); /* Un ligero fondo al pasar el ratón */
-    transform: translateY(-2px);
+nav a {
+  font-family: 'Poppins', sans-serif; 
+  color: white !important; 
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
 }
 
-/* --- AJUSTES PARA EL CUERPO Y LAS SECCIONES (por el navbar fijo) --- */
-
-body {
-    /* La altura del navbar-brand (logo) es 50px. El padding por defecto del navbar en Bootstrap
-       sumaría alrededor de 56px a 60px. Ajusta este valor con precisión. */
-    padding-top: 70px; /* **AJUSTA ESTO** - Usa las herramientas de desarrollador para medir la altura exacta del header fijo */
+nav a:hover {
+  color: chocolate !important; /* ¡Aseguramos el chocolate al pasar el ratón! */
+  transform: translateY(-2px);
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-section {
-    padding-top: 80px; /* Espacio interno de la sección para que el título no quede pegado al tope */
-    margin-top: -70px; /* Margen negativo para compensar el padding-top del body. **AJUSTA AL MISMO VALOR QUE EL padding-top del body** */
-    padding-bottom: 50px;
-}
-
-.hero-slider {
-    margin-top: 0;
-    padding-top: 0;
-}
 /* --- ESTILOS PARA EL HERO SLIDER / CARRUSEL --- */
 
 .hero-slider {
