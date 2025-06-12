@@ -591,6 +591,7 @@ p {
 }
 
 
+/* Estilos para la imagen con el borde irregular */
 .rounded-image {
     width: 100%; /* La imagen ocupa el 100% del ancho de su columna */
     height: auto; /* Mantiene la proporción de la imagen */
@@ -598,13 +599,15 @@ p {
     object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
     aspect-ratio: 1 / 1; /* Mantiene una proporción cuadrada para la imagen si es necesario */
 
-    /* PROPIEDAD CLAVE PARA LA FORMA IRREGULAR */
-    /* Referencia el archivo SVG y el ID del clipPath dentro de él */
-    clip-path: url('forma-irregular.svg#irregular-clip-id'); /* ¡Punto clave! */
-
-    /* border-radius no tendrá efecto visible con clip-path complejo */
-    /* border-radius: 15px; */ 
-    
+    /* PROPIEDAD CLAVE PARA LA FORMA IRREGULAR (ajusta los porcentajes a tu gusto) */
+    clip-path: polygon(
+        10% 0%,        /* Esquina superior izquierda */
+        90% 5%,        /* Esquina superior derecha */
+        100% 80%,      /* Esquina inferior derecha */
+        70% 100%,      /* Punto inferior central */
+        0% 90%         /* Esquina inferior izquierda */
+    );
+    border-radius: 15px; /* Un poco de redondez general que clip-path puede sobrescribir/complementar */
     box-shadow: 0 8px 16px var(--color-sombra); /* Sombra más pronunciada para profundidad */
     transition: transform 0.3s ease-in-out; /* Transición suave para efectos hover */
 }
