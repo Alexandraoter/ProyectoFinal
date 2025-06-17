@@ -527,3 +527,124 @@ p {
   object-fit: cover; /* Recorta las imágenes para ajustarse */
 }
 
+/* ======================================= */
+/* Sección: Un refugio con corazón */
+/* ======================================= */
+.refugio-corazon-section {
+    background-color: #FEF9F1; /* Fondo de la sección de borde a borde */
+    padding: 80px 0; /* Padding vertical para espacio, ajusta según necesites */
+    overflow: hidden; /* Para asegurar que clip-path no cree barras de desplazamiento */
+}
+
+/* Estilos para el título de la sección */
+.refugio-corazon-section h2 {
+    color: #4CAF50; /* Color del título */
+    font-weight: bold; /* Negrita */
+    font-size: 2.2rem; /* Tamaño de la fuente, ajusta si es necesario */
+    margin-bottom: 3.5rem; /* Margen inferior para separarlo del contenido */
+    /* text-align: center; (ya aplicado con la clase Bootstrap text-center en HTML) */
+}
+
+/* Estilos para el bloque de texto */
+.text-block p {
+    color: var(--color-parrafo);
+    font-size: 1.1rem; /* Tamaño de la fuente para legibilidad */
+    line-height: 1.7; /* Espaciado entre líneas para mejor lectura */
+    margin-bottom: 1.2rem; /* Espacio entre párrafos */
+    /* text-align: justify; (ya aplicado con la clase Bootstrap text-justify en HTML, 
+       pero puedes descomentar aquí si prefieres solo CSS) */
+}
+
+/* Último párrafo del bloque de texto para evitar margen inferior excesivo si es el último */
+.text-block p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Estilos para la imagen con el borde irregular */
+.rounded-image {
+    width: 100%; /* La imagen ocupa el 100% del ancho de su columna */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    aspect-ratio: 1 / 1; /* Mantiene una proporción cuadrada para la imagen si es necesario */
+
+    /* PROPIEDAD CLAVE PARA LA FORMA IRREGULAR (ajusta los porcentajes a tu gusto) */
+    clip-path: polygon(
+        10% 0%,        /* Esquina superior izquierda */
+        90% 5%,        /* Esquina superior derecha */
+        100% 80%,      /* Esquina inferior derecha */
+        70% 100%,      /* Punto inferior central */
+        0% 90%         /* Esquina inferior izquierda */
+    );
+    border-radius: 15px; /* Un poco de redondez general que clip-path puede sobrescribir/complementar */
+    box-shadow: 0 8px 16px var(--color-sombra); /* Sombra más pronunciada para profundidad */
+    transition: transform 0.3s ease-in-out; /* Transición suave para efectos hover */
+}
+
+/* Efecto hover opcional para la imagen */
+.rounded-image:hover {
+    transform: scale(1.02); /* Ligeramente más grande al pasar el ratón */
+}
+
+
+/* ======================================= */
+/* Media Queries para Responsividad */
+/* ======================================= */
+
+@media (max-width: 991.98px) { /* Para pantallas 'md' y menores (hasta 992px) */
+    .refugio-corazon-section h2 {
+        font-size: 2.0rem;
+        margin-bottom: 2.5rem;
+    }
+    .text-block p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* Para pantallas más pequeñas que 'md' (768px), o móviles */
+    .refugio-corazon-section .row {
+        /* En móviles, la imagen se colocará encima del texto para mejorar el flujo */
+        flex-direction: column; 
+    }
+    .image-block {
+        order: -1; /* Mueve la imagen arriba del texto en móvil */
+        margin-bottom: 2.5rem; /* Espacio debajo de la imagen cuando está arriba */
+        text-align: center; /* Centra la imagen si su contenedor tiene ancho variable */
+    }
+    .text-block {
+        text-align: center; /* Centra el texto en móvil */
+    }
+    .text-block p {
+        text-align: center; /* Asegura que los párrafos se centren en móvil */
+    }
+    .refugio-corazon-section h2 {
+        font-size: 2rem; /* Reduce el tamaño del título en móviles */
+        margin-bottom: 2rem;
+    }
+    .rounded-image {
+        /* Ajusta clip-path si la forma se ve rara en pantallas muy estrechas */
+        clip-path: polygon(
+            5% 0%,
+            95% 2%,
+            100% 90%,
+            70% 100%,
+            0% 90%
+        );
+        max-width: 80%; /* Limita el ancho de la imagen en móvil para que no sea demasiado grande */
+        margin: 0 auto; /* Centra la imagen */
+    }
+}
+
+@media (max-width: 575.98px) { /* Para pantallas 'sm' y menores (hasta 576px) */
+    .refugio-corazon-section {
+        padding: 60px 0; /* Menos padding en pantallas muy pequeñas */
+    }
+    .refugio-corazon-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+    .text-block p {
+        font-size: 1rem;
+    }
+}
