@@ -422,9 +422,26 @@ p {
 .paso-circulo {
   width: 210px;
   height: 210px;
-  background-color: #d3d3d3;
   border-radius: 50%;
   flex-shrink: 0;
+  background-size: cover;      /* Asegura que la imagen cubra todo el círculo sin deformarse */
+  background-position: center; /* Centra la imagen dentro del círculo */
+}
+
+#paso-img-1 {
+  background-image: url('/img/1.jpeg');
+}
+
+#paso-img-2 {
+  background-image: url('/img/22.jpeg');
+}
+
+#paso-img-3 {
+  background-image: url('/img/23.jpeg');
+}
+
+#paso-img-4 {
+  background-image: url('/img/24.jpg');
 }
 
 .paso-numero{
