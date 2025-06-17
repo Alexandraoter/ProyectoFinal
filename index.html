@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
 
     <!--ICono de huellita-->
     <link rel="icon" href="https://images.vexels.com/content/202268/preview/red-dog-footprint-flat-40fc87.png">
@@ -23,29 +23,35 @@
 <body>
 
     <header>
-        <!-- <img src="/img/logo.png" alt="Logo The Loving Brunch & Rescues Of Cali" class="site-logo"> -->
-
-        <nav class="navbar navbar-expand-md">
-            <div class="container">
+        <!-- Barra de navegacion -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container ">
                 <a class="navbar-brand" href="#">
                     <img src="/img/logo.png" alt="Logo The Loving Brunch & Rescues Of Cali" class="site-logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Menú">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="mainNavbar">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="pages/sobrenosotros.html"><i
-                                    class="fas fa-paw me-2"></i>Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages/adoptame.html"><i
-                                    class="fas fa-heart me-2"></i>Aportes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages/porque.html"><i
-                                    class="fas fa-question-circle me-2"></i>Donaciones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><i
-                                    class="fas fa-hand-holding-heart me-2"></i>Apadrina</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages/ayudarlos.html"><i
-                                    class="fas fa-hands-helping me-2"></i>Cómo Ayudarlos</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-paw me-2"></i>Refugio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-heart me-2"></i>Pasos para adoptar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-hands-helping me-2"></i>Testimonios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-hand-holding-heart me-2"></i>Aportes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-question-circle me-2"></i>Preguntas
+                                frecuentes</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -73,15 +79,33 @@
         <button class="slider-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
     </section>
 
-    <div class="container mt-4">
-        <div class="row my-5">
-            <div class="col-md-8 mx-auto text-center">
-                <h2 class="mb-4 ">Bienvenidos a Huellitas de Amor</h2>
-                <p class="lead">Somos una organización dedicada al rescate y cuidado de animales abandonados,
-                    buscando brindarles un hogar lleno de amor y atención.</p>
+    <!-- Inicio Sección Cómo aportar-->
+    <section class="">
+        <div class="container">
+            <h2 class="text-success fw-bold mb-1 display-5">¿Listo para adoptar?</h2>
+            <div class="row align-items-center">
+                <!-- Columna izquierda: texto -->
+                <div class="col-md-6">
+                    <h3 class="text-success fw-bold mb-3"><span class="me-2">💖</span>Cómo aportar</h3>
+                    <p>Tu ayuda es vital. Con cada aporte:</p>
+                    <ul class="mb-3">
+                        <li>Alimentamos.</li>
+                        <li>Vacunamos.</li>
+                        <li>Rescatamos.</li>
+                        <li>Rehabilitamos.</li>
+                    </ul>
+                    <p><em>Puedes donar dinero, alimento, medicinas o tiempo como voluntario.</em></p>
+                    <p class="fw-semibold">Cada gesto cuenta.</p>
+                    <a href="#" class="btn btn-warning text-white fw-semibold">Has tu aporte aquí</a>
+                </div>
+                <!-- Columna derecha: imagen -->
+                <div class="col-md-6 mt-4 mt-md-0 p-0">
+                    <img src="/img/Como aportar image.jpg" alt="Perro feliz" class="img-fluid rounded shadow">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Fin Sección Cómo aportar -->
 
     <!-- Inicio Seccion ¿Listo para adoptar? -->
     <section class="adopcion-pasos-fila py-5 text-center">

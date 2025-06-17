@@ -8,85 +8,70 @@ body {
     background-color: #FEF9F1;
 }
 
-/* --- ESTILOS PARA EL HEADER --- */
-header {
-  background-color:#006400; /* Color de fondo verde oscuro */
-  color: white; /* Color de texto general para el header */
-  font-size: 1.0em; /* Tamaño de fuente general */
-  font-family: 'Poppins', sans-serif; /* Asegúrate de que Poppins esté importado si lo usas */
-  padding: 12px 20px; /* Relleno interno */
-  display: flex; /* Habilita Flexbox */
-  flex-direction: row; /* Coloca los elementos hijos en una fila */
-  align-items: center; /* Centra los elementos hijos verticalmente */
-  justify-content: space-between; /* Empuja el primer hijo a la izquierda y el último a la derecha */
-  width: 100%; /* Asegura que el header ocupe el 100% del ancho disponible */
-  box-sizing: border-box; /* Incluye padding en el ancho total */
-}
 
-/* --- ESTILOS PARA EL LOGO --- */
-.site-logo {
-  height: 50px; /* Tamaño del logo. Ajusta según tus preferencias. */
-  width: auto; /* Mantiene la proporción de la imagen */
-  display: block; /* Elimina cualquier espacio adicional debajo de la imagen */
-  flex-shrink: 0; /* Evita que el logo se encoja si no hay espacio */
-}
+.navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
 
-/* --- ESTILOS PARA LA NAVEGACIÓN DE BOOTSTRAP --- */
-/*
-   Estas reglas son clave para que tu navegación se comporte como esperas
-   dentro de Flexbox y anule algunos comportamientos predeterminados de Bootstrap.
-*/
-.navbar {
-    padding: 0; /* Quita el padding predeterminado de Bootstrap en la navbar */
-    flex-grow: 1; /* Permite que la navbar ocupe el espacio restante */
-    display: flex; /* Asegura que la navbar sea un contenedor flex también */
-    justify-content: flex-end; /* Alinea el contenido de la navbar (el colapsable) a la derecha */
-    width: auto; /* Permite que el ancho se ajuste al contenido */
-}
+        .site-logo {
+            height: 80px;
+            width: auto;
+        }
 
-.navbar-collapse {
-    flex-grow: 0 !important; /* Anula el flex-grow de Bootstrap si interfiere con la alineación */
-    justify-content: flex-end !important; /* FUERZA la alineación a la derecha de los ítems de navegación */
-    width: auto; /* Asegura que no ocupe todo el ancho si no es necesario */
-}
+        .navbar {
+            background-color: #265D3A;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-/* Asegura que la lista de enlaces no esté centrada por defecto si Bootstrap lo aplica */
-.navbar-nav {
-    display: flex;
-    justify-content: flex-end; /* Alinea los ítems de la lista a la derecha */
-    width: 100%; /* Asegura que la lista ocupe el ancho disponible para alinear sus ítems */
-}
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+        }
 
-nav ul { /* Esto también se aplica a .navbar-nav si no es sobreescrito */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
+        nav ul {
+            /* Esto también se aplica a .navbar-nav si no es sobreescrito */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
 
-nav li {
-  margin-right: 25px;
-}
+        nav li {
+            margin-right: 25px;
+        }
 
-nav li:last-child {
-  margin-right: 0;
-}
+        nav li:last-child {
+            margin-right: 0;
+        }
 
-nav a {
-  font-family: 'Poppins', sans-serif; /* Consistente con el header */
-  color: white !important; /* ¡Aseguramos el blanco para el texto! */
-  text-decoration: none;
-  font-size: 1.3em;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-  transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
-}
+        nav a {
+            font-family: 'Poppins', sans-serif;
+            /* Consistente con el header */
+            color: white !important;
+            /* ¡Aseguramos el blanco para el texto! */
+            text-decoration: none;
+            font-size: 1.3em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
+        }
 
-nav a:hover {
-  color: chocolate !important; /* ¡Aseguramos el chocolate al pasar el ratón! */
-  transform: translateY(-2px);
-}
+        nav a:hover {
+            color: chocolate !important;
+            /* ¡Aseguramos el chocolate al pasar el ratón! */
+            transform: translateY(-2px);
+        }
+
+        .navbar-collapse {
+            flex-grow: 0 !important;
+            /* Anula el flex-grow de Bootstrap si interfiere con la alineación */
+            justify-content: flex-end !important;
+            /* FUERZA la alineación a la derecha de los ítems de navegación */
+            width: auto;
+            /* Asegura que no ocupe todo el ancho si no es necesario */
+        }
 
 /* --- ESTILOS PARA EL HERO SLIDER / CARRUSEL --- */
 
@@ -219,15 +204,10 @@ p {
 @media (max-width: 767px) {
   header {
     flex-direction: column; /* Logo y navegación se apilan */
-    padding: 15px;
     text-align: center;
   }
 
-  .site-logo {
-    height: 100px; /* Logo más pequeño en móviles */
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
+  
 
   .navbar-collapse {
       justify-content: center !important; /* FUERZA el centrado del menú en móviles */
