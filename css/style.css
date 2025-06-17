@@ -561,31 +561,28 @@ p {
 }
 
 
-/* Estilos para la imagen con el borde irregular */
-.rounded-image {
-    width: 100%; /* La imagen ocupa el 100% del ancho de su columna */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Asegura que la imagen se comporte como un bloque */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
-    aspect-ratio: 1 / 1; /* Mantiene una proporción cuadrada para la imagen si es necesario */
+/* Estilos para la imagen con la forma de "blob" */
+.blob-image {
+    width: 100%;
+    /* Esta forma es ligeramente más ancha que alta. */
+    /*aspect-ratio: 375 / 410; */
+    height: 100%;
 
-    /* PROPIEDAD CLAVE PARA LA FORMA IRREGULAR (ajusta los porcentajes a tu gusto) */
-    clip-path: polygon(
-        10% 0%,        /* Esquina superior izquierda */
-        90% 5%,        /* Esquina superior derecha */
-        100% 80%,      /* Esquina inferior derecha */
-        70% 100%,      /* Punto inferior central */
-        0% 90%         /* Esquina inferior izquierda */
-    );
-    border-radius: 15px; /* Un poco de redondez general que clip-path puede sobrescribir/complementar */
-    box-shadow: 0 8px 16px var(--color-sombra); /* Sombra más pronunciada para profundidad */
-    transition: transform 0.3s ease-in-out; /* Transición suave para efectos hover */
+    object-fit: cover;
+    object-position: center center;
+    
+    clip-path: path('M335.6,29.3c35.2,46,38.1,114.3,16.5,169.8c-21.6,55.5-67.6,98.2-121.2,112.9c-53.6,14.7-114.7,-0.4-154.9-43.1S-13.8,171.1,5.5,116.3C24.8,61.5,83.4,2,143.2,0.5C203-1,300.4-16.7,335.6,29.3Z');
+
+    /* La sombra y la transición se mantienen, funcionan perfectamente */
+    filter: drop-shadow(0 8px 10px var(#4CAF50));
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
 
-/* Efecto hover opcional para la imagen */
-.rounded-image:hover {
-    transform: scale(1.02); /* Ligeramente más grande al pasar el ratón */
+.blob-image:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 12px 20px var(--color-sombra, rgba(0, 0, 0, 0.2)));
 }
+
 
 
 /* ======================================= */
