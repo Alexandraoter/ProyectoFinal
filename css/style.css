@@ -580,7 +580,7 @@ p {
 
 /* Estilos para la imagen con la forma de "blob" */
 .blob-image {
-    width: 100%;
+    width: 80%;
     /* Esta forma es ligeramente más ancha que alta. */
     /*aspect-ratio: 375 / 410; */
     height: 100%;
