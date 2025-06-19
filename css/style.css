@@ -565,7 +565,7 @@ p {
 /* Estilos para el bloque de texto */
 .text-block p {
     color: var(--color-parrafo);
-    font-size: 1.1rem; /* Tamaño de la fuente para legibilidad */
+    font-size: 1.3rem; /* Tamaño de la fuente para legibilidad */
     line-height: 1.7; /* Espaciado entre líneas para mejor lectura */
     margin-bottom: 1.2rem; /* Espacio entre párrafos */
     /* text-align: justify; (ya aplicado con la clase Bootstrap text-justify en HTML, 
