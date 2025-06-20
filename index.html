@@ -59,17 +59,27 @@
     </header>
     <!-- Se saco del div container mt-4 por que estabalimitando el tamaño de la imgs  -->
   
-    <!-- Inicio Sección Header-->
-     <section class="video-header-section py-5 text-center">
+   
 
-     </section>
-    <!-- Fin Sección Header-->
 
+    <!-- Sección Hero con video de fondo usando utilidades Bootstrap -->
+    <section class="position-relative overflow-hidden" style="height:80vh; min-height:400px;">
+        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline style="z-index:1;">
+            <source src="img/Video Header.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75" style="z-index:2;"></div>
+        <div class="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white h-100" style="z-index:3;">
+            <h1 class="display-3 fw-bold mb-4">¡Cambia una vida, adopta un amigo!</h1>
+            <p class="h3 mb-5">Haz la diferencia hoy mismo y dale un hogar a quien más lo necesita.</p>
+            <a href="#" class="btn btn-standar btn-warning btn-lg">Quiero Adoptar</a>
+        </div>
+    </section>
+    <!-- Fin Sección Hero -->
 
     <!-- Inicio Sección Cómo aportar-->
     <section class="">
         <div class="container">
-            <h2 class="text-success fw-bold mb-1 display-5">¿Listo para adoptar?</h2>
             <div class="row align-items-center">
                 <!-- Columna izquierda: texto -->
                 <div class="col-md-6">
