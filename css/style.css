@@ -2,329 +2,320 @@
 body {
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden;  /* Quita esta línea temporalmente para depurar el ancho real */
+    /* overflow-x: hidden; /* Quita esta línea temporalmente para depurar el ancho real */
     box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
     width: 100vw; /* Asegura que el body ocupe el 100% del viewport width */
     background-color: #FEF9F1;
 }
 
-
 .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
 
-        .site-logo {
-            height: 80px;
-            width: auto;
-        }
+.site-logo {
+    height: 80px;
+    width: auto;
+}
 
-        .navbar {
-            background-color: #265D3A;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+.navbar {
+    background-color: #265D3A;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-        }
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+}
 
-        nav ul {
-            /* Esto también se aplica a .navbar-nav si no es sobreescrito */
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
 
-        nav li {
-            margin-right: 25px;
-        }
+nav li {
+    margin-right: 25px;
+}
 
-        nav li:last-child {
-            margin-right: 0;
-        }
+nav li:last-child {
+    margin-right: 0;
+}
 
-        nav a {
-            font-family: 'Poppins', sans-serif;
-            /* Consistente con el header */
-            color: white !important;
-            /* ¡Aseguramos el blanco para el texto! */
-            text-decoration: none;
-            font-size: 1.3em;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
-            transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
-        }
+nav a {
+    font-family: 'Poppins', sans-serif;
+    color: white !important;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease, font-size 0.3s ease, transform 0.2s ease;
+}
 
-        nav a:hover {
-            color: chocolate !important;
-            /* ¡Aseguramos el chocolate al pasar el ratón! */
-            transform: translateY(-2px);
-        }
+nav a:hover {
+    color: chocolate !important;
+    transform: translateY(-2px);
+}
 
-        .navbar-collapse {
-            flex-grow: 0 !important;
-            /* Anula el flex-grow de Bootstrap si interfiere con la alineación */
-            justify-content: flex-end !important;
-            /* FUERZA la alineación a la derecha de los ítems de navegación */
-            width: auto;
-            /* Asegura que no ocupe todo el ancho si no es necesario */
-        }
+.navbar-collapse {
+    flex-grow: 0 !important;
+    justify-content: flex-end !important;
+    width: auto;
+}
 
 /* --- ESTILOS PARA EL HERO SLIDER / CARRUSEL --- */
-
 .hero-slider {
-  position: relative;
-  width: 100%; /* Cambiado de 100vw a 100% */
-  margin: 0 auto; /* Centra el slider */
-  max-width: 100%; /* Asegura que no se desborde */
-  overflow: hidden; /* ¡CRÍTICO! Oculta los slides que no están visibles */
-   /* min-height: 400px; */
-  height: 400px;
-
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+    /* CORREGIDO: Altura adaptable con relación de aspecto */
+    height: auto; 
+    aspect-ratio: 16 / 9; /* Relación de aspecto común para sliders */
+    min-height: 200px; /* Altura mínima para asegurar visibilidad en móviles */
+    max-height: 500px; /* Altura máxima para no ser excesivamente grande en pantallas muy anchas */
 }
+
 .slides-container {
-  display: flex; /* ¡CRÍTICO! Pone los slides uno al lado del otro */
-  transition: transform 0.5s ease-in-out;
-  width: auto;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: auto;
+    height: 100%; /* Asegura que ocupe la altura del hero-slider */
 }
 
 .slide {
-  flex-shrink: 0; /* ¡CRÍTICO! Evita que los slides se encojan */
-  width: 100%; /* Cada slide ocupa el 100% del ancho de su contenedor (.hero-slider) */
-  height: auto; /* Ajusta la altura automáticamente */
-  display: block;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%; /* Asegura que cada slide ocupe la altura de su contenedor */
+    display: block;
 }
 
 .slide img {
-  width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor (.slide) */
-  height: 400px; /* Mantiene la proporción de la imagen */
-  display: block;
-  object-fit: contain; /* Asegura que la imagen cubra el área sin deformarse */
+    width: 100%;
+    height: 100%; /* CORREGIDO: La imagen ocupa el 100% del alto del slide */
+    display: block;
+    object-fit: cover; /* CORREGIDO: Cubre el área, recortando si es necesario */
+    object-position: center; /* Centra la imagen */
 }
-
-
 
 /* --- ESTILOS GENERALES DE IMAGEN --- */
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* --- ESTILOS PARA LOS PUNTOS DE NAVEGACIÓN (DOTS) --- */
 .slider-dots {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  padding: 5px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  z-index: 10; /* Asegura que estén por encima de la imagen */
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 10;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border: 1px solid rgba(0,0,0,0.2);
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .dot:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .dot.active {
-  background-color: #4CAF50;
+    background-color: #4CAF50;
 }
 
 /* --- OPCIONAL: ESTILOS PARA FLECHAS DE NAVEGACIÓN --- */
 .slider-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  font-size: 24px;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
 .slider-nav:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .slider-nav.prev {
-  left: 15px;
+    left: 15px;
 }
 
 .slider-nav.next {
-  right: 15px;
+    right: 15px;
 }
 
 /* --- ESTILOS PARA PÁRRAFOS --- */
 p {
-  font-family: popins sans-serif;
+    font-family: 'Poppins', sans-serif; /* Corregido: 'popins' a 'Poppins' */
 }
 
 /* --- MEDIA QUERIES --- */
 
 /* Para Tablets y móviles grandes en horizontal (ej. hasta 1023px) */
 @media (max-width: 1023px) {
-  nav li {
-    margin-right: 15px;
-  }
+    nav li {
+        margin-right: 15px;
+    }
 
-  nav a {
-    font-size: 1em;
-  }
+    nav a {
+        font-size: 1em;
+    }
 
-  .hero-slider {
-    max-width: 100%; /* Cambiado de 100vw a 100% */
-  }
-  .slide img {
-      width: 100%; /* Cambiado de 100vw a 100% */
-  }
+    /* El hero-slider y sus imágenes ya están adaptados con los estilos base */
 }
 
 /* Para Móviles (ej. hasta 767px) */
 @media (max-width: 767px) {
-  header {
-    flex-direction: column; /* Logo y navegación se apilan */
-    text-align: center;
-  }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  
+    .navbar-collapse {
+        justify-content: center !important;
+        flex-grow: unset !important;
+    }
 
-  .navbar-collapse {
-      justify-content: center !important; /* FUERZA el centrado del menú en móviles */
-      flex-grow: unset !important; /* Desactiva el grow de Bootstrap */
-  }
+    .navbar-nav {
+        justify-content: center;
+    }
 
-  .navbar-nav {
-      justify-content: center; /* Centra la lista de enlaces en móviles */
-  }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
+    nav li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
 
-  nav li {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100%;
-  }
+    nav li:last-child {
+        margin-bottom: 0;
+    }
 
-  nav li:last-child {
-    margin-bottom: 0;
-  }
+    nav a {
+        font-size: 1.1em;
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
 
-  nav a {
-    font-size: 1.1em;
-    display: block;
-    text-align: center;
-    padding: 10px;
-  }
+    /* Ajustes para el Hero Slider en móviles */
+    .hero-slider {
+        margin: 15px auto;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        /* CORREGIDO: Ajusta la altura del slider para móviles */
+        height: 250px; 
+        aspect-ratio: unset; /* Permite que la altura fija prevalezca si se usa */
+    }
 
-  /* Ajustes para el Hero Slider en móviles */
-  .hero-slider {
-    max-width: 100%; /* Ocupa todo el ancho en móviles */
-    margin: 15px auto;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    height: 250px; /* Ajusta la altura para móviles */
-  }
+    .slider-dots {
+        bottom: 10px;
+        padding: 4px;
+        gap: 6px;
+    }
 
-  .slider-dots {
-    bottom: 10px;
-    padding: 4px;
-    gap: 6px;
-  }
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
 
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
+    .slider-nav {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
 
-  .slider-nav {
-    font-size: 14px;
-    padding: 6px 10px;
-  }
+    .slider-nav.prev {
+        left: 10px;
+    }
 
-  .slider-nav.prev {
-    left: 10px;
-  }
-
-  .slider-nav.next {
-    right: 10px;
-  }
+    .slider-nav.next {
+        right: 10px;
+    }
 }
 
 /* Para Móviles muy pequeños (opcional, ej. hasta 480px) */
 @media (max-width: 480px) {
-  .site-logo {
-    height: 60px;
-  }
+    .site-logo {
+        height: 60px;
+    }
 
-  nav a {
-    font-size: 1em;
-    padding: 8px;
-  }
+    nav a {
+        font-size: 1em;
+        padding: 8px;
+    }
 
-  .slider-dots {
-    gap: 5px;
-  }
+    .slider-dots {
+        gap: 5px;
+    }
 
-  .slider-nav {
-    font-size: 14px;
-    padding: 5px 8px;
-  }
+    .slider-nav {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+    .hero-slider {
+        height: 200px; /* Podrías reducir aún más la altura para móviles muy pequeños */
+    }
 }
 
 /* --- ESTILOS PARA EL FOOTER --- */
 .main-footer {
-    background-color: #006400; /* Color de fondo oscuro (como el de las imágenes) */
+    background-color: #006400;
     color: white;
     padding: 30px 20px;
-    font-family: 'Poppins', sans-serif; /* Consistente con el resto del sitio */
+    font-family: 'Poppins', sans-serif;
 }
 
 .main-footer .footer-content {
     display: flex;
-    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
-    justify-content: space-between; /* Distribuye las columnas */
-    align-items: flex-start; /* Alinea los ítems arriba */
-    max-width: 1200px; /* Ancho máximo para centrar el contenido del footer */
-    margin: 0 auto; /* Centra el contenido del footer */
-    gap: 20px; /* Espacio entre las columnas */
-    padding-bottom: 20px; /* Padding antes de la línea divisoria */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    padding-bottom: 20px;
 }
 
 .main-footer .footer-section {
-    flex: 1; /* Permite que las secciones crezcan y se encojan */
-    min-width: 200px; /* Ancho mínimo para cada columna antes de envolverse */
-    margin-bottom: 20px; /* Espacio debajo de cada sección en pantallas pequeñas */
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
 }
 
 .main-footer .footer-section h4 {
-    color: white; /* Color de los títulos de las secciones */
+    color: white;
     font-size: 1.4em;
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea debajo de los títulos */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 8px;
 }
 
@@ -332,18 +323,16 @@ p {
     font-size: 0.95em;
     line-height: 1.6;
     margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.8); /* Ligeramente más tenue para el texto */
-    font-family: 'Poppins', sans-serif; /* Sobrescribir font-family si es necesario */
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Estilos específicos para el logo en el footer */
 .main-footer .footer-logo .footer-site-logo {
-    height: 100px; /* Ajusta el tamaño del logo del footer */
+    height: 100px;
     width: auto;
     margin-bottom: 10px;
 }
 
-/* Estilos para los iconos sociales */
 .main-footer .social-icons a {
     color: white;
     font-size: 1.5em;
@@ -352,21 +341,20 @@ p {
 }
 
 .main-footer .social-icons a:hover {
-    color: #4CAF50; /* Color de hover para los iconos (o chocolate si prefieres) */
+    color: #4CAF50;
 }
 
-/* Estilos para la sección de abajo del footer */
 .main-footer .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria, si no usas <hr> */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .main-footer .footer-bottom hr {
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Estilo de la línea horizontal */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin: 20px auto;
-    width: 80%; /* Ancho de la línea */
+    width: 80%;
 }
 
 .main-footer .footer-bottom p {
@@ -378,13 +366,13 @@ p {
 /* Media Queries para responsividad del footer */
 @media (max-width: 767px) {
     .main-footer .footer-content {
-        flex-direction: column; /* Las columnas se apilan en móviles */
-        align-items: center; /* Centra las secciones */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
     .main-footer .footer-section {
-        min-width: 100%; /* Ocupa todo el ancho disponible */
+        min-width: 100%;
         margin-bottom: 30px;
     }
 
@@ -393,220 +381,298 @@ p {
     }
 
     .main-footer .social-icons {
-        justify-content: center; /* Centra los iconos en móviles */
+        justify-content: center;
         display: flex;
         width: 100%;
     }
 }
 
-
 /* --- SECCIÓN "¿Listo para adoptar?" EN FILA --- */
 .adopcion-pasos-fila {
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-.adopcion-pasos-fila h2{
-  font-family: 'Merriweather';
+.adopcion-pasos-fila h2 {
+    font-family: 'Merriweather';
 }
 
 .adopcion-pasos-fila .subtitulo {
-  color: #3C1E07;
-  font-size: 30px;
+    color: #3C1E07;
+    font-size: 30px;
 }
 
 .paso-fila {
-  flex-wrap: nowrap;
-  gap: 10px;
+    /* CORREGIDO: Quitado flex-wrap: nowrap para permitir el envolvimiento */
+    display: flex; /* Asegura que es un flex container */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    justify-content: center; /* Centrar los elementos cuando se envuelvan */
+    align-items: center; /* Alinear verticalmente */
+    gap: 10px;
 }
 
 .paso-circulo {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  background-size: cover;      /* Asegura que la imagen cubra todo el círculo sin deformarse */
-  background-position: center; /* Centra la imagen dentro del círculo */
+    /* CORREGIDO: Tamaño más adaptable por defecto */
+    width: 210px; /* Tamaño base, se ajustará con media queries */
+    height: 210px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
 }
 
 #paso-img-1 {
-  background-image: url('/img/1.jpeg');
+    background-image: url('/img/1.jpeg');
 }
 
 #paso-img-2 {
-  background-image: url('/img/22.jpeg');
+    background-image: url('/img/22.jpeg');
 }
 
 #paso-img-3 {
-  background-image: url('/img/23.jpeg');
+    background-image: url('/img/23.jpeg');
 }
 
 #paso-img-4 {
-  background-image: url('/img/24.jpg');
+    background-image: url('/img/24.jpg');
 }
 
-.paso-numero{
-  font-size: 90px;
-  font-family: Merriweather;
-  font-style: italic;
-  font-weight: bold;
-  color: #CE6A22;
+.paso-numero {
+    font-size: 90px;
+    font-family: Merriweather;
+    font-style: italic;
+    font-weight: bold;
+    color: #CE6A22;
 }
 
 .paso-texto {
-  font-size: 2rem;
-  color: #333;
-  max-width: 400px;
-  line-height: 1.4;
-  font-family: poppins;
-  font-weight: bold;
+    font-size: 2rem;
+    color: #333;
+    max-width: 400px;
+    line-height: 1.4;
+    font-family: 'Poppins', sans-serif; /* Corregido: 'poppins' a 'Poppins' */
+    font-weight: bold;
 }
 
 .paso-linea {
-  width: 5px;
-  height: 70px;
-  background-color: #CE6A22;
+    width: 5px;
+    height: 70px;
+    background-color: #CE6A22;
 }
 
 @media (max-width: 576px) {
-  .paso-fila {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .paso-fila {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-  .paso-texto {
-    text-align: center !important;
-    margin-top: 10px;
-  }
+    .paso-circulo {
+        /* CORREGIDO: Reducir tamaño de círculos para móviles */
+        width: 150px;
+        height: 150px;
+        margin-bottom: 15px; /* Espacio debajo del círculo */
+    }
 
-  .paso-fila h3 {
-    margin-top: 10px;
-  }
+    .paso-numero {
+        font-size: 70px; /* Ajuste para móviles */
+    }
 
-  .paso-linea {
-    height: 30px;
-  }
+    .paso-texto {
+        text-align: center !important;
+        margin-top: 10px;
+        font-size: 1.2rem; /* Ajuste para móviles */
+        max-width: 90%; /* Limita el ancho del texto en móviles */
+    }
+
+    .paso-fila h3 {
+        margin-top: 10px;
+    }
+
+    .paso-linea {
+        height: 30px;
+    }
 }
 
-/* --- SECCIÓN "Testimonios" --- */
+/* Agregado: Media Query para móviles muy pequeños en la sección de pasos */
+@media (max-width: 375px) {
+    .paso-circulo {
+        width: 120px;
+        height: 120px;
+    }
+    .paso-numero {
+        font-size: 60px;
+    }
+    .paso-texto {
+        font-size: 1rem;
+    }
+}
 
-.seccion-testimonios h2{
-  color: #2B5433;
-  font-family: 'Merriweather';
+
+/* --- SECCIÓN "Testimonios" --- */
+.seccion-testimonios h2 {
+    color: #2B5433;
+    font-family: 'Merriweather';
 }
 
 .seccion-testimonios .subtitulo {
-  color: #3C1E07;
-  font-size: 30px;
+    color: #3C1E07;
+    font-size: 30px;
+}
+
+/* Asegúrate de que el contenedor de las tarjetas permite flex-wrap */
+.testimonios-container { /* Asumiendo que tienes un contenedor flexbox para las cards */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las tarjetas */
 }
 
 .card-testimonio {
-  background-color: #265D3A; /* Verde oscuro */
-  border-radius: 16px;
-  color: white;
-  text-align: center;
-  height: 100%;
-  width: 352px;
+    background-color: #265D3A;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    height: 100%;
+    /* CORREGIDO: Ancho adaptable, pero con max-width */
+    width: 100%; 
+    max-width: 352px; /* Limita el ancho en pantallas grandes */
+    margin: 0 auto; /* Centra la tarjeta si es más pequeña que el contenedor */
 }
 
 .img-testimonio {
-  width: 255px;
-  height: 255px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid white;
-  margin: 0 auto;
+    width: 255px;
+    height: 255px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin: 0 auto;
 }
 
 .card-testimonio .frase {
-  font-size: 21px;
-  font-family: poppins;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5;
-  margin-bottom: 10px;
+    font-size: 21px;
+    font-family: 'Poppins', sans-serif; /* Corregido: 'poppins' a 'Poppins' */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
 .card-testimonio .autor {
-  font-size: 16px;
-  font-family: poppins;
-  font-style: italic;
-  color: #dcdcdc;
-  margin-bottom: 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Corregido: 'poppins' a 'Poppins' */
+    font-style: italic;
+    color: #dcdcdc;
+    margin-bottom: 0;
 }
 
 /* --- SECCIÓN CÓMO APORTAR Y PREGUNTAS FRECUENTES --- */
-
 .seccion-como-aportar img,
 .seccion-preguntas img {
-  width: 100%; /* Altura ajustada para uniformidad */
-  height: 550px; /* Altura ajustada para uniformidad */
-  object-fit: cover; /* Recorta las imágenes para ajustarse */
+    width: 100%;
+    /* CORREGIDO: Altura adaptable con max-height */
+    height: auto; 
+    max-height: 550px; /* Máxima altura en pantallas grandes */
+    object-fit: cover;
+    font-size: 2.5rem;
+}
+
+/* --- Centrado de Títulos y Justificado de Texto en Secciones "Cómo Aportar" y "Preguntas Frecuentes" --- */
+
+/* Centrar específicamente los títulos (h3) dentro de las columnas de texto */
+.seccion-como-aportar .col-md-6 h3,
+.seccion-preguntas .col-md-6 h3 {
+    text-align: center;
+}
+
+/* Justificar el resto del texto (párrafos y elementos de lista) dentro de las columnas de texto */
+.seccion-como-aportar .col-md-6 p,
+.seccion-como-aportar .col-md-6 ul li, /* Incluye li para los elementos de lista */
+.seccion-preguntas .col-md-6 p,
+.seccion-preguntas .col-md-6 ul li { /* Incluye li para Preguntas Frecuentes*/
+    text-align: justify;
+}
+
+/* Para el botón "Has tu aporte aquí" en la sección "Cómo aportar", para que también esté centrado */
+.seccion-como-aportar .col-md-6 .btn {
+    display: block; /* Convierte el botón a un elemento de bloque */
+    margin: 0 auto; /* Centra el bloque horizontalmente */
+    max-width: fit-content; /* Asegura que el botón no ocupe todo el ancho disponible */
+}
+
+
+/* --- Consideración de Responsividad para Justificación --- */
+@media (max-width: 767px) {
+    .seccion-como-aportar .col-md-6 p,
+    .seccion-como-aportar .col-md-6 ul li,
+    .seccion-preguntas .col-md-6 p,
+    .seccion-preguntas .col-md-6 ul li {
+        text-align: left; /* Alinea a la izquierda en pantallas pequeñas */
+    }
+}
+
+/* Media Query para ajustar altura de estas imágenes en móviles */
+@media (max-width: 767px) {
+    .seccion-como-aportar img,
+    .seccion-preguntas img {
+        height: 300px; /* Altura más adecuada para móviles */
+    }
+}
+@media (max-width: 480px) {
+    .seccion-como-aportar img,
+    .seccion-preguntas img {
+        height: 250px; /* Altura aún más reducida para móviles muy pequeños */
+    }
 }
 
 /* ======================================= */
 /* Sección: Un refugio con corazón */
 /* ======================================= */
 .refugio-corazon-section {
-    background-color: #FEF9F1; /* Fondo de la sección de borde a borde */
-    padding: 80px 0; /* Padding vertical para espacio, ajusta según necesites */
-    overflow: hidden; /* Para asegurar que clip-path no cree barras de desplazamiento */
+    background-color: #FEF9F1;
+    padding: 80px 0;
+    overflow: hidden;
 }
 
-/* Estilos para el título de la sección */
 .refugio-corazon-section h2 {
-    color: #4CAF50; /* Color del título */
-    font-weight: bold; /* Negrita */
-    font-size: 2.2rem; /* Tamaño de la fuente, ajusta si es necesario */
-    margin-bottom: 3.5rem; /* Margen inferior para separarlo del contenido */
-    /* text-align: center; (ya aplicado con la clase Bootstrap text-center en HTML) */
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin-bottom: 3.5rem;
 }
 
-/* Estilos para el bloque de texto */
 .text-block p {
-    color: var(--color-parrafo);
-    font-size: 1.3rem; /* Tamaño de la fuente para legibilidad */
-    line-height: 1.7; /* Espaciado entre líneas para mejor lectura */
-    margin-bottom: 1.2rem; /* Espacio entre párrafos */
-    /* text-align: justify; (ya aplicado con la clase Bootstrap text-justify en HTML, 
-       pero puedes descomentar aquí si prefieres solo CSS) */
+    color: var(--color-parrafo, #333); /* Agregado fallback si --color-parrafo no está definido */
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
 }
 
-/* Último párrafo del bloque de texto para evitar margen inferior excesivo si es el último */
 .text-block p:last-child {
     margin-bottom: 0;
 }
 
-
-/* Estilos para la imagen con la forma de "blob" */
 .blob-image {
     width: 80%;
-    /* Esta forma es ligeramente más ancha que alta. */
-    /*aspect-ratio: 375 / 410; */
     height: 100%;
-
     object-fit: cover;
     object-position: center center;
-    
     clip-path: path('M335.6,29.3c35.2,46,38.1,114.3,16.5,169.8c-21.6,55.5-67.6,98.2-121.2,112.9c-53.6,14.7-114.7,-0.4-154.9-43.1S-13.8,171.1,5.5,116.3C24.8,61.5,83.4,2,143.2,0.5C203-1,300.4-16.7,335.6,29.3Z');
-
-    /* La sombra y la transición se mantienen, funcionan perfectamente */
-    filter: drop-shadow(0 8px 10px var(#4CAF50));
+    /* CORREGIDO: Sintaxis correcta para filter: drop-shadow */
+    filter: drop-shadow(0 8px 10px #4CAF50); /* Usar el color directamente */
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
 
 .blob-image:hover {
     transform: scale(1.03);
-    filter: drop-shadow(0 12px 20px var(--color-sombra, rgba(0, 0, 0, 0.2)));
+    /* CORREGIDO: Sintaxis correcta para filter: drop-shadow */
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.2)); 
 }
-
-
 
 /* ======================================= */
 /* Media Queries para Responsividad */
 /* ======================================= */
 
-@media (max-width: 991.98px) { /* Para pantallas 'md' y menores (hasta 992px) */
+@media (max-width: 991.98px) {
     .refugio-corazon-section h2 {
         font-size: 2.0rem;
         margin-bottom: 2.5rem;
@@ -616,28 +682,27 @@ p {
     }
 }
 
-@media (max-width: 767.98px) { /* Para pantallas más pequeñas que 'md' (768px), o móviles */
+@media (max-width: 767.98px) {
     .refugio-corazon-section .row {
-        /* En móviles, la imagen se colocará encima del texto para mejorar el flujo */
         flex-direction: column; 
     }
     .image-block {
-        order: -1; /* Mueve la imagen arriba del texto en móvil */
-        margin-bottom: 2.5rem; /* Espacio debajo de la imagen cuando está arriba */
-        text-align: center; /* Centra la imagen si su contenedor tiene ancho variable */
+        order: -1;
+        margin-bottom: 2.5rem;
+        text-align: center;
     }
     .text-block {
-        text-align: center; /* Centra el texto en móvil */
+        text-align: center;
     }
     .text-block p {
-        text-align: center; /* Asegura que los párrafos se centren en móvil */
+        text-align: center;
     }
     .refugio-corazon-section h2 {
-        font-size: 2rem; /* Reduce el tamaño del título en móviles */
+        font-size: 2rem;
         margin-bottom: 2rem;
     }
-    .rounded-image {
-        /* Ajusta clip-path si la forma se ve rara en pantallas muy estrechas */
+    /* CORREGIDO: Se aplica directamente a .blob-image si esa es la clase en tu HTML */
+    .blob-image { /* Cambiado de .rounded-image a .blob-image */
         clip-path: polygon(
             5% 0%,
             95% 2%,
@@ -645,14 +710,14 @@ p {
             70% 100%,
             0% 90%
         );
-        max-width: 80%; /* Limita el ancho de la imagen en móvil para que no sea demasiado grande */
-        margin: 0 auto; /* Centra la imagen */
+        max-width: 80%;
+        margin: 0 auto;
     }
 }
 
-@media (max-width: 575.98px) { /* Para pantallas 'sm' y menores (hasta 576px) */
+@media (max-width: 575.98px) {
     .refugio-corazon-section {
-        padding: 60px 0; /* Menos padding en pantallas muy pequeñas */
+        padding: 60px 0;
     }
     .refugio-corazon-section h2 {
         font-size: 1.6rem;
