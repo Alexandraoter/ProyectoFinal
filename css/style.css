@@ -412,7 +412,6 @@ p {
 
 .card-testimonio {
     background-color: #265D3A;
-    border-radius: 16px;
     color: white;
     text-align: center;
     height: 100%;
@@ -449,22 +448,26 @@ p {
 }
 
 /* --- SECCIÓN CÓMO APORTAR Y PREGUNTAS FRECUENTES --- */
+
+
 .seccion-como-aportar img,
 .seccion-preguntas img {
     width: 100%;
     /* CORREGIDO: Altura adaptable con max-height */
     height: auto; 
-    max-height: 550px; /* Máxima altura en pantallas grandes */
+    max-height: 700px; /* Máxima altura en pantallas grandes */
     object-fit: cover;
     font-size: 2.5rem;
 }
 
 /* --- Centrado de Títulos y Justificado de Texto en Secciones "Cómo Aportar" y "Preguntas Frecuentes" --- */
 
-/* Centrar específicamente los títulos (h3) dentro de las columnas de texto */
-.seccion-como-aportar .col-md-6 h3,
-.seccion-preguntas .col-md-6 h3 {
-    text-align: center;
+.seccion-como-aportar h2{
+ font-family: 'Merriweather';
+}
+
+.seccion-preguntas h2{
+ font-family: 'Merriweather';
 }
 
 /* Justificar el resto del texto (párrafos y elementos de lista) dentro de las columnas de texto */
@@ -475,12 +478,6 @@ p {
     text-align: justify;
 }
 
-/* Para el botón "Has tu aporte aquí" en la sección "Cómo aportar", para que también esté centrado */
-.seccion-como-aportar .col-md-6 .btn {
-    display: block; /* Convierte el botón a un elemento de bloque */
-    margin: 0 auto; /* Centra el bloque horizontalmente */
-    max-width: fit-content; /* Asegura que el botón no ocupe todo el ancho disponible */
-}
 
 
 /* --- Consideración de Responsividad para Justificación --- */
@@ -508,7 +505,7 @@ p {
 }
 
 /* ======================================= */
-/* Sección: Un refugio con corazón */
+/* Inicio Sección: Un refugio con corazón */
 /* ======================================= */
 .refugio-corazon-section {
     background-color: #FEF9F1;
@@ -529,6 +526,12 @@ p {
 
 .text-block p:last-child {
     margin-bottom: 0;
+}
+
+.image-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .blob-image {
@@ -589,28 +592,31 @@ p {
             100% 90%,
             70% 100%,
             0% 90%
-        );
-        max-width: 80%;
-        margin: 0 auto;
+            );
+            max-width: 80%;
+            margin: 0 auto;
+        }
     }
+    
+    @media (max-width: 575.98px) {
+        .refugio-corazon-section {
+            padding: 60px 0;
+        }
+        .refugio-corazon-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+        }
+        .text-block p {
+            font-size: 1rem;
+        }
 }
-
-@media (max-width: 575.98px) {
-    .refugio-corazon-section {
-        padding: 60px 0;
-    }
-    .refugio-corazon-section h2 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-    }
-    .text-block p {
-        font-size: 1rem;
-    }
-}
+/* ======================================= */
+/* Fin Sección: Un refugio con corazón */
+/* ======================================= */
 
 /* --- INCIO SECCION FOOTER --- */
 .main-footer {
-    background-color: #006400;
+    background-color: #265D3A;
     color: white;
     padding: 30px 20px;
     font-family: 'Poppins', sans-serif;
@@ -663,7 +669,7 @@ p {
 }
 
 .main-footer .social-icons a:hover {
-    color: #4CAF50;
+    color: #CE6A22;
 }
 
 .main-footer .footer-bottom {
@@ -672,15 +678,10 @@ p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.main-footer .footer-bottom hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 20px auto;
-    width: 80%;
-}
+
 
 .main-footer .footer-bottom p {
-    font-size: 1.4em;
+    font-size: 1em;
     color: rgba(255, 255, 255, 0.6);
     margin: 0;
 }
