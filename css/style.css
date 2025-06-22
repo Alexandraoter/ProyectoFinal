@@ -344,52 +344,75 @@ p {
 
 @media (max-width: 576px) {
     .paso-fila {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: center !important;
+        gap: 0 !important;
+    }
+    .paso-circulo {
+        margin: 0 0 15px 0 !important;
+    }
+    .paso-numero {
+        margin: 0 0 10px 0 !important;
+        display: block !important;
+        order: 2 !important;
+    }
+    .paso-texto {
+        margin: 0 0 20px 0 !important;
+        text-align: center !important;
+        max-width: 90%;
+        font-size: 1.2rem;
+        order: 3 !important;
+    }
+    .contain-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    /* Asegura que el número y el texto estén debajo de la imagen en todos los pasos */
+    .paso-fila > .paso-circulo {
+        order: 1 !important;
+    }
+    .paso-fila > h3.paso-numero {
+        order: 2 !important;
+    }
+    .paso-fila > p.paso-texto {
+        order: 3 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .paso-fila {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .paso-circulo {
+        margin: 0 0 15px 0;
+    }
+
+    .paso-numero {
+        margin: 0 0 10px 0;
+        display: block;
+    }
+
+    .paso-texto {
+        margin: 0 0 20px 0;
+        text-align: center;
+        max-width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .contain-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
-    .paso-circulo {
-        /* CORREGIDO: Reducir tamaño de círculos para móviles */
-        width: 150px;
-        height: 150px;
-        margin-bottom: 15px; /* Espacio debajo del círculo */
-    }
-
-    .paso-numero {
-        font-size: 70px; /* Ajuste para móviles */
-    }
-
-    .paso-texto {
-        text-align: center !important;
-        margin-top: 10px;
-        font-size: 1.2rem; /* Ajuste para móviles */
-        max-width: 90%; /* Limita el ancho del texto en móviles */
-    }
-
-    .paso-fila h3 {
-        margin-top: 10px;
-    }
-
-    .paso-linea {
-        height: 30px;
-    }
 }
-
-/* Agregado: Media Query para móviles muy pequeños en la sección de pasos */
-@media (max-width: 375px) {
-    .paso-circulo {
-        width: 120px;
-        height: 120px;
-    }
-    .paso-numero {
-        font-size: 60px;
-    }
-    .paso-texto {
-        font-size: 1rem;
-    }
-}
-
 
 /* --- SECCIÓN "Testimonios" --- */
 .seccion-testimonios h2 {
