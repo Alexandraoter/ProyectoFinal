@@ -57,120 +57,110 @@
             </div>
         </nav>
     </header>
-    <!-- Se saco del div container mt-4 por que estabalimitando el tamaño de la imgs  -->
-    <section class="hero-slider">
-        <div class="slides-container">
-            <div class="slide">
-                <img src="/img/img2.jpeg" alt="frase 2" class="img-fluid">
-            </div>
-            <div class="slide">
-                <img src="/img/img4.jpg" alt="frase 3" class="img-fluid">
-            </div>
-            <div class="slide">
-                <img src="/img/img3.jpeg" alt="frase 4" class="img-fluid">
-            </div>
-        </div>
 
-        <div class="slider-dots">
-            <!-- Los puntos se generarán con JavaScript -->
-        </div>
-        <!-- Flechas de navegación -->
-        <button class="slider-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-        <button class="slider-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-    </section>
-
-    <!-- incio vide-Header-->
-     <section class="position-relative overflow-hidden" style="height:80vh; min-height:400px;">
-        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline style="z-index:1;">
+    <!-- incio video-Header-->
+    <section class="position-relative overflow-hidden" style="height:80vh; min-height:400px;">
+        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline
+            style="z-index:1;">
             <source src="img/Video Header.mp4" type="video/mp4">
             Tu navegador no soporta el video.
         </video>
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75" style="z-index:2;"></div>
-        <div class="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white h-100" style="z-index:3;">
-            <h1 class="display-3 fw-bold mb-4">¡Cambia una vida, adopta un amigo!</h1>
-            <p class="h3 mb-5">Haz la diferencia hoy mismo y dale un hogar a quien más lo necesita.</p>
-            <a href="#" class="btn btn-standar btn-warning btn-lg">Quiero Adoptar</a>
+        <div class="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white h-100"
+            style="z-index:3;">
+            <h1 class="display-2 fw-bold mb-5">¡Cambia una <span class="acento-titulo">vida</span>, adopta un <span
+                    class="acento-titulo">amigo!</span></h1>
+            <p class="h3 mb-5">
+                Haz la diferencia hoy mismo y <br>
+                dale un hogar a <span class="acento-titulo-subtitulo">quien más lo necesita.</span>
+            </p>
         </div>
     </section>
-    <!-- Fin vide-Header-->
+    <!-- Fin video-Header-->
 
     <!-- Inicio Sección Un refugio con corazón-->
     <section id="refugio-seccion" class="refugio-corazon-section py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Un refugio con corazón</h2>
-        <div class="row">
-            <div class="col-md-7 text-block">
-                <p class="text-justify">En nuestro refugio no solo rescatamos animales; rescatamos historias, rescatamos esperanzas.</p>
-                <p class="text-justify">Somos un equipo de voluntarios, profesionales y amantes de los animales unidos por una causa: darle una segunda oportunidad a quienes han sido olvidados.</p>
-                <p class="text-justify">Cada perrito o gatito que llega aquí lo hace con una historia distinta: algunos fueron abandonados, otros sobrevivieron al maltrato, y muchos simplemente nacieron sin un lugar seguro. En nuestro refugio encuentran cuidado, alimento, atención veterinaria… pero sobre todo, amor incondicional mientras esperan la familia que cambiará sus vidas.</p>
-            </div>
-            <div class="col-md-5 image-block">
-                <!--
+        <div class="container">
+            <h2 class="text-center mb-5 text-success fw-bold mb-1 display-5">Un refugio con corazón</h2>
+            <div class="row">
+                <div class="col-md-7 text-block">
+                    <p class="text-justify">En nuestro refugio no solo rescatamos animales; rescatamos historias,
+                        rescatamos esperanzas.</p>
+                    <p class="text-justify">Somos un equipo de voluntarios, profesionales y amantes de los animales
+                        unidos por una causa: darle una segunda oportunidad a quienes han sido olvidados.</p>
+                    <p class="text-justify">Cada perrito o gatito que llega aquí lo hace con una historia distinta:
+                        algunos fueron abandonados, otros sobrevivieron al maltrato, y muchos simplemente nacieron sin
+                        un lugar seguro. En nuestro refugio encuentran cuidado, alimento, atención veterinaria… pero
+                        sobre todo, amor incondicional mientras esperan la familia que cambiará sus vidas.</p>
+                </div>
+                <div class="col-md-5 image-block">
+                    <!--
                   CAMBIO IMPORTANTE:
                   La clase ahora es "blob-image" para aplicar los nuevos estilos.
                   El 'img-fluid' de Bootstrap se mantiene para la responsividad básica.
                 -->
-                <img src="/img/R.jpeg" alt="Perro feliz en un refugio" class="img-fluid blob-image">
+                    <img src="/img/R.jpeg" alt="Perro feliz en un refugio" class="img-fluid blob-image">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- Fin Sección un refugio con corazón-->
 
     <!-- Inicio Seccion ¿Listo para adoptar? -->
 
-<section class="adopcion-pasos-fila py-5 text-center">
-    <div class="container">
-        <h2 class="text-success fw-bold mb-1 display-5">¿Listo para adoptar?</h2>
-        <p class="fst-italic mb-5 fw-bold subtitulo">Es Fácil</p>
+    <section class="adopcion-pasos-fila py-5 text-center">
+        <div class="container">
+            <h2 class="text-success fw-bold mb-1 display-5">¿Listo para adoptar?</h2>
+            
+            <p class="fst-italic mb-5 fw-bold subtitulo">Es Fácil</p>
 
-        <!-- PASO 1 -->
-        <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
-            <!-- Solo hay UN círculo, que tiene el ID y la clase -->
-            <div id="paso-img-1" class="paso-circulo me-4"></div>
-            <h3 class="paso-numero fw-bold me-4 mb-0">1.</h3>
-            <p class="paso-texto m-0 text-center">Conoce a los peluditos disponibles.</p>
-        </div>
-
-        <div class="paso-linea mx-auto mb-4"></div>
-
-        <!-- PASO 2 -->
-        <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
-            <!-- Solo hay UN círculo aquí también -->
-            <div id="paso-img-2" class="paso-circulo me-4"></div>
-            <div class="contain-container d-flex">
-                <h3 class="paso-numero fw-bold me-4 mb-0">2.</h3>
-                <p class="paso-texto m-0 text-center">Llena el formulario de adopción.</p>
+            <!-- PASO 1 -->
+            <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
+                <!-- Solo hay UN círculo, que tiene el ID y la clase -->
+                <div id="paso-img-1" class="paso-circulo me-4"></div>
+                <h3 class="paso-numero fw-bold me-4 mb-0">1.</h3>
+                <p class="paso-texto m-0 text-center">Conoce a los peluditos disponibles.</p>
             </div>
-        </div>
 
-        <div class="paso-linea mx-auto mb-4"></div>
+            <div class="paso-linea mx-auto mb-4"></div>
 
-        <!-- PASO 3 -->
-        <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
-            <!-- Solo hay UN círculo -->
-            <div id="paso-img-3" class="paso-circulo me-4"></div>
-            <div class="contain-container d-flex">
-                <h3 class="paso-numero fw-bold me-4 mb-0">3.</h3>
-                <p class="paso-texto m-0 text-center">Agenda una visita o videollamada.</p>
+            <!-- PASO 2 -->
+            <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
+                <!-- Solo hay UN círculo aquí también -->
+                <div id="paso-img-2" class="paso-circulo me-4"></div>
+                <div class="contain-container d-flex">
+                    <h3 class="paso-numero fw-bold me-4 mb-0">2.</h3>
+                    <p class="paso-texto m-0 text-center">Llena el formulario de adopción.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="paso-linea mx-auto mb-4"></div>
-        
-        <!-- PASO 4 -->
-        <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
-             <!-- Y aquí solo UN círculo -->
-            <div id="paso-img-4" class="paso-circulo me-4"></div>
-            <div class="contain-container d-flex">
-                <h3 class="paso-numero fw-bold me-4 mb-0">4.</h3>
-                <p class="paso-texto m-0 text-center">Firma el compromiso...y prepárate para recibir amor puro.</p>
+            <div class="paso-linea mx-auto mb-4"></div>
+
+            <!-- PASO 3 -->
+            <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
+                <!-- Solo hay UN círculo -->
+                <div id="paso-img-3" class="paso-circulo me-4"></div>
+                <div class="contain-container d-flex">
+                    <h3 class="paso-numero fw-bold me-4 mb-0">3.</h3>
+                    <p class="paso-texto m-0 text-center">Agenda una visita o videollamada.</p>
+                </div>
             </div>
-        </div>
 
-        <p class="fst-italic mt-5 mb-5 fw-bold subtitulo">No vendemos mascotas, creamos familias.</p>
-    </div>
-</section>
+            <div class="paso-linea mx-auto mb-4"></div>
+
+            <!-- PASO 4 -->
+            <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
+                <!-- Y aquí solo UN círculo -->
+                <div id="paso-img-4" class="paso-circulo me-4"></div>
+                <div class="contain-container d-flex">
+                    <h3 class="paso-numero fw-bold me-4 mb-0">4.</h3>
+                    <p class="paso-texto m-0 text-center">Firma el compromiso...y prepárate para recibir amor puro.</p>
+                </div>
+            </div>
+
+            <p class="fst-italic mt-5 mb-5 fw-bold subtitulo">No vendemos mascotas, creamos familias.</p>
+        </div>
+    </section>
     <!-- Fin Seccion ¿Listo para adoptar? -->
 
     <!-- Inicio Seccion Testimonios -->
@@ -183,8 +173,7 @@
                 <!-- Testimonio 1 -->
                 <div class="">
                     <div class="card-testimonio p-4">
-                        <img src="/img/T1.jpeg" alt="Carolina con Luna"
-                            class="img-testimonio mb-4">
+                        <img src="/img/T1.jpeg" alt="Carolina con Luna" class="img-testimonio mb-4">
                         <p class="frase">"Nunca imaginé cuánto cambiaría mi vida al adoptar a Luna. Ella me salvó a mí."
                         </p>
                         <p class="autor">— Carolina y Victor, adoptantes felices</p>
@@ -194,8 +183,7 @@
                 <!-- Testimonio 2 -->
                 <div class="">
                     <div class="card-testimonio p-4">
-                        <img src="/img/T2.jpeg" alt="Pedro con Max"
-                            class="img-testimonio mb-4">
+                        <img src="/img/T2.jpeg" alt="Pedro con Max" class="img-testimonio mb-4">
                         <p class="frase">"Adoptar a Max fue la mejor decisión. Ahora mi casa está llena de alegría y
                             amorr."</p>
                         <p class="autor">— Pedro, adoptante feliz</p>
@@ -205,8 +193,7 @@
                 <!-- Testimonio 3 -->
                 <div class="">
                     <div class="card-testimonio p-4">
-                        <img src="/img/T3.jpeg" alt="Laura con Nala"
-                            class="img-testimonio mb-4">
+                        <img src="/img/T3.jpeg" alt="Laura con Nala" class="img-testimonio mb-4">
                         <p class="frase">"Nala llegó a mi vida para enseñarme el verdadero significado de la lealtad."
                         </p>
                         <p class="autor">— Laura, adoptante feliz</p>
