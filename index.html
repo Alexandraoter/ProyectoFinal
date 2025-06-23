@@ -6,15 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS personalizado -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
-    <!--ICono de huellita-->
     <link rel="icon" href="https://images.vexels.com/content/202268/preview/red-dog-footprint-flat-40fc87.png">
     <title>TLB & ROC</title>
 
@@ -23,7 +19,6 @@
 <body>
 
     <header>
-        <!-- Barra de navegacion -->
         <nav class="navbar navbar-expand-lg">
             <div class="container ">
                 <a class="navbar-brand" href="#">
@@ -36,20 +31,20 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-paw me-2"></i>Refugio</a>
+                            <a class="nav-link" href="#refugio-seccion"><i class="fas fa-paw me-2"></i>Refugio</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-heart me-2"></i>Pasos para adoptar</a>
+                            <a class="nav-link" href="#adopcion-pasos"><i class="fas fa-heart me-2"></i>Pasos para adoptar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-hands-helping me-2"></i>Testimonios</a>
+                            <a class="nav-link" href="#testimonios-seccion"><i class="fas fa-hands-helping me-2"></i>Testimonios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-hand-holding-heart me-2"></i>Aportes</a>
+                            <a class="nav-link" href="#como-aportar-seccion"><i class="fas fa-hand-holding-heart me-2"></i>Aportes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-question-circle me-2"></i>Preguntas
+                            <a class="nav-link" href="#preguntas-frecuentes-seccion"><i class="fas fa-question-circle me-2"></i>Preguntas
                                 frecuentes</a>
                         </li>
                     </ul>
@@ -58,7 +53,6 @@
         </nav>
     </header>
 
-    <!-- incio video-Header-->
     <section class="position-relative overflow-hidden" style="height:80vh; min-height:400px;">
         <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline
             style="z-index:1;">
@@ -69,16 +63,13 @@
         <div class="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white h-100"
             style="z-index:3;">
             <h1 class="display-2 fw-bold mb-5">¡Cambia una <span class="acento-titulo">vida</span>, adopta un <span
-                    class="acento-titulo">amigo!</span></h1>
+                        class="acento-titulo">amigo!</span></h1>
             <p class="h3 mb-5">
                 Haz la diferencia hoy mismo y <br>
                 dale un hogar a <span class="acento-titulo-subtitulo">quien más lo necesita.</span>
             </p>
         </div>
     </section>
-    <!-- Fin video-Header-->
-
-    <!-- Inicio Sección Un refugio con corazón-->
     <section id="refugio-seccion" class="refugio-corazon-section py-5">
         <div class="container">
             <h2 class="text-center mb-5 text-success fw-bold mb-1 display-5">Un refugio con corazón</h2>
@@ -94,29 +85,18 @@
                         sobre todo, amor incondicional mientras esperan la familia que cambiará sus vidas.</p>
                 </div>
                 <div class="col-md-5 image-block">
-                    <!--
-                  CAMBIO IMPORTANTE:
-                  La clase ahora es "blob-image" para aplicar los nuevos estilos.
-                  El 'img-fluid' de Bootstrap se mantiene para la responsividad básica.
-                -->
                     <img src="/img/R.jpeg" alt="Perro feliz en un refugio" class="img-fluid blob-image">
                 </div>
             </div>
         </div>
     </section>
-    <!-- Fin Sección un refugio con corazón-->
-
-    <!-- Inicio Seccion ¿Listo para adoptar? -->
-
-    <section class="adopcion-pasos-fila py-5 text-center">
+    <section id="adopcion-pasos" class="adopcion-pasos-fila py-5 text-center">
         <div class="container">
             <h2 class="text-success fw-bold mb-1 display-5">¿Listo para adoptar?</h2>
 
             <p class="fst-italic mb-5 fw-bold subtitulo">Es Fácil</p>
 
-            <!-- PASO 1 -->
             <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
-                <!-- Solo hay UN círculo, que tiene el ID y la clase -->
                 <div id="paso-img-1" class="paso-circulo me-4"></div>
                 <div class="contain-container d-flex">
                     <h3 class="paso-numero fw-bold me-4 mb-0">1.</h3>
@@ -126,9 +106,7 @@
 
             <div class="paso-linea mx-auto mb-4"></div>
 
-            <!-- PASO 2 -->
             <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
-                <!-- Solo hay UN círculo aquí también -->
                 <div id="paso-img-2" class="paso-circulo me-4"></div>
                 <div class="contain-container d-flex">
                     <h3 class="paso-numero fw-bold me-4 mb-0">2.</h3>
@@ -138,9 +116,7 @@
 
             <div class="paso-linea mx-auto mb-4"></div>
 
-            <!-- PASO 3 -->
             <div class="paso-fila d-flex align-items-center justify-content-center mb-4">
-                <!-- Solo hay UN círculo -->
                 <div id="paso-img-3" class="paso-circulo me-4"></div>
                 <div class="contain-container d-flex">
                     <h3 class="paso-numero fw-bold me-4 mb-0">3.</h3>
@@ -150,9 +126,7 @@
 
             <div class="paso-linea mx-auto mb-4"></div>
 
-            <!-- PASO 4 -->
             <div class="paso-fila d-flex flex-row-reverse align-items-center justify-content-center mb-4">
-                <!-- Y aquí solo UN círculo -->
                 <div id="paso-img-4" class="paso-circulo me-4"></div>
                 <div class="contain-container d-flex">
                     <h3 class="paso-numero fw-bold me-4 mb-0">4.</h3>
@@ -163,16 +137,12 @@
             <p class="fst-italic mt-5 mb-5 fw-bold subtitulo">No vendemos mascotas, creamos familias.</p>
         </div>
     </section>
-    <!-- Fin Seccion ¿Listo para adoptar? -->
-
-    <!-- Inicio Seccion Testimonios -->
-    <section class="seccion-testimonios py-5 text-center">
+    <section id="testimonios-seccion" class="seccion-testimonios py-5 text-center">
         <div class="container">
             <h2 class="display-5 fw-bold">Testimonios</h2>
             <p class="fst-italic mb-5 fw-bold subtitulo">Historias que inspiran</p>
 
             <div class="d-flex flex-row flex-wrap justify-content-center justify-content-xl-between gap-4">
-                <!-- Testimonio 1 -->
                 <div class="">
                     <div class="card-testimonio p-4">
                         <img src="/img/T1.jpeg" alt="Carolina con Luna" class="img-testimonio mb-4">
@@ -182,7 +152,6 @@
                     </div>
                 </div>
 
-                <!-- Testimonio 2 -->
                 <div class="">
                     <div class="card-testimonio p-4">
                         <img src="/img/T2.jpeg" alt="Pedro con Max" class="img-testimonio mb-4">
@@ -192,7 +161,6 @@
                     </div>
                 </div>
 
-                <!-- Testimonio 3 -->
                 <div class="">
                     <div class="card-testimonio p-4">
                         <img src="/img/T3.jpeg" alt="Laura con Nala" class="img-testimonio mb-4">
@@ -204,13 +172,9 @@
             </div>
         </div>
     </section>
-    <!-- Fin Seccion Testimonios -->
-
-    <!-- Inicio Sección Cómo aportar-->
-    <section class="seccion-como-aportar">
+    <section id="como-aportar-seccion" class="seccion-como-aportar">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Columna izquierda: texto -->
                 <div class="col-md-6">
                     <h2 class="text-center mb-5 text-success fw-bold mb-1 display-5">Cómo aportar</h3>
                         <p>Tu ayuda es vital. Con cada aporte:</p>
@@ -223,25 +187,19 @@
                         <p><em>Puedes donar dinero, alimento, medicinas o tiempo como voluntario.</em></p>
                         <p class="fw-semibold">Cada gesto cuenta.</p>
                 </div>
-                <!-- Columna derecha: imagen -->
                 <div class="col-md-6 mt-4 mt-md-0 p-0">
                     <img src="/img/Como aportar image.jpg" alt="Perro feliz" class="img-fluid">
                 </div>
             </div>
         </div>
     </section>
-    <!-- Fin Sección Cómo aportar -->
-
-    <!-- Inicio Sección Preguntas -->
-    <section class="seccion-preguntas mb-5">
+    <section id="preguntas-frecuentes-seccion" class="seccion-preguntas mb-5">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Imagen izquierda -->
                 <div class="col-md-6 p-0">
                     <img src="/img/Dudas.jpg" alt="Cachorros" class="img-fluid">
                 </div>
 
-                <!-- Texto derecha -->
                 <div class="col-md-6 mt-4 mt-md-0 ps-4 pt-3">
                     <h2 class="text-center mb-5 text-success fw-bold mb-1 display-5">¿Tienes dudas?<br>Aquí las
                         respondemos</h3>
@@ -261,10 +219,6 @@
             </div>
         </div>
     </section>
-    <!-- Fin Sección Preguntas -->
-
-
-
     <footer class="main-footer">
         <div class="container footer-content">
             <div class="footer-section footer-logo">
@@ -295,9 +249,7 @@
             <p>&copy; 2023 The loving Brunch & Rescues of Cali. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script personalizado para el slider -->
     <script src="js/slider.js"></script>
 </body>
 
