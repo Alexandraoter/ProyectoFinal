@@ -1,22 +1,30 @@
-
 html {
-  scroll-behavior: smooth; /* Añadido para el desplazamiento suave */
+  scroll-behavior: smooth;
 }
 
-
-
-/* --- ESTILOS GENERALES Y RESET BÁSICO --- */
 body {
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; /* Quita esta línea temporalmente para depurar el ancho real */
-    box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
-    width: 100vw; /* Asegura que el body ocupe el 100% del viewport width */
+    box-sizing: border-box;
+    width: 100vw;
     background-color: #FEF9F1;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .site-logo {
@@ -72,50 +80,44 @@ nav a:hover {
     width: auto;
 }
 
-/* --- ESTILOS PARA EL HERO SLIDER / CARRUSEL --- */
+/* =========================
+   HERO SLIDER / CARRUSEL
+   ========================= */
 .hero-slider {
     position: relative;
     width: 100%;
     margin: 0 auto;
     max-width: 100%;
     overflow: hidden;
-    /* CORREGIDO: Altura adaptable con relación de aspecto */
     height: auto; 
-    aspect-ratio: 16 / 9; /* Relación de aspecto común para sliders */
-    min-height: 200px; /* Altura mínima para asegurar visibilidad en móviles */
-    max-height: 500px; /* Altura máxima para no ser excesivamente grande en pantallas muy anchas */
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    max-height: 500px;
 }
 
 .slides-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: auto;
-    height: 100%; /* Asegura que ocupe la altura del hero-slider */
+    height: 100%;
 }
 
 .slide {
     flex-shrink: 0;
     width: 100%;
-    height: 100%; /* Asegura que cada slide ocupe la altura de su contenedor */
+    height: 100%;
     display: block;
 }
 
 .slide img {
     width: 100%;
-    height: 100%; /* CORREGIDO: La imagen ocupa el 100% del alto del slide */
+    height: 100%;
     display: block;
-    object-fit: cover; /* CORREGIDO: Cubre el área, recortando si es necesario */
-    object-position: center; /* Centra la imagen */
+    object-fit: cover;
+    object-position: center;
 }
 
-/* --- ESTILOS GENERALES DE IMAGEN --- */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* --- ESTILOS PARA LOS PUNTOS DE NAVEGACIÓN (DOTS) --- */
+/* --- Puntos de navegación del slider --- */
 .slider-dots {
     position: absolute;
     bottom: 15px;
@@ -147,7 +149,9 @@ img {
     background-color: #4CAF50;
 }
 
-/* --- INICIO SECCION VIDEO HEADER --- */
+/* =========================
+   VIDEO HEADER
+   ========================= */
 .acento-titulo{
     color: #CE6A22;
 }
@@ -156,128 +160,10 @@ img {
     color: #CE6A22;
     text-decoration: underline;
 }
-/* --- FIN SECCION VIDEO HEADER --- */
 
-/* --- ESTILOS PARA PÁRRAFOS --- */
-p {
-    font-family: 'Poppins', sans-serif; /* Corregido: 'popins' a 'Poppins' */
-}
-
-/* --- MEDIA QUERIES --- */
-
-/* Para Tablets y móviles grandes en horizontal (ej. hasta 1023px) */
-@media (max-width: 1023px) {
-    nav li {
-        margin-right: 15px;
-    }
-
-    nav a {
-        font-size: 1em;
-    }
-
-    /* El hero-slider y sus imágenes ya están adaptados con los estilos base */
-}
-
-/* Para Móviles (ej. hasta 767px) */
-@media (max-width: 767px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navbar-collapse {
-        justify-content: center !important;
-        flex-grow: unset !important;
-    }
-
-    .navbar-nav {
-        justify-content: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    nav li {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    nav li:last-child {
-        margin-bottom: 0;
-    }
-
-    nav a {
-        font-size: 1.1em;
-        display: block;
-        text-align: center;
-        padding: 10px;
-    }
-
-    /* Ajustes para el Hero Slider en móviles */
-    .hero-slider {
-        margin: 15px auto;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        /* CORREGIDO: Ajusta la altura del slider para móviles */
-        height: 250px; 
-        aspect-ratio: unset; /* Permite que la altura fija prevalezca si se usa */
-    }
-
-    .slider-dots {
-        bottom: 10px;
-        padding: 4px;
-        gap: 6px;
-    }
-
-    .dot {
-        width: 8px;
-        height: 8px;
-    }
-
-    .slider-nav {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-
-    .slider-nav.prev {
-        left: 10px;
-    }
-
-    .slider-nav.next {
-        right: 10px;
-    }
-}
-
-/* Para Móviles muy pequeños (opcional, ej. hasta 480px) */
-@media (max-width: 480px) {
-    .site-logo {
-        height: 60px;
-    }
-
-    nav a {
-        font-size: 1em;
-        padding: 8px;
-    }
-
-    .slider-dots {
-        gap: 5px;
-    }
-
-    .slider-nav {
-        font-size: 14px;
-        padding: 5px 8px;
-    }
-    .hero-slider {
-        height: 200px; /* Podrías reducir aún más la altura para móviles muy pequeños */
-    }
-}
-
-
-
-/* --- SECCIÓN "¿Listo para adoptar?" EN FILA --- */
+/* =========================
+   SECCIÓN "¿Listo para adoptar?"
+   ========================= */
 .adopcion-pasos-fila {
     font-family: 'Poppins', sans-serif;
 }
@@ -292,17 +178,15 @@ p {
 }
 
 .paso-fila {
-    /* CORREGIDO: Quitado flex-wrap: nowrap para permitir el envolvimiento */
-    display: flex; /* Asegura que es un flex container */
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
-    justify-content: center; /* Centrar los elementos cuando se envuelvan */
-    align-items: center; /* Alinear verticalmente */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
 .paso-circulo {
-    /* CORREGIDO: Tamaño más adaptable por defecto */
-    width: 210px; /* Tamaño base, se ajustará con media queries */
+    width: 210px;
     height: 210px;
     border-radius: 50%;
     flex-shrink: 0;
@@ -310,21 +194,10 @@ p {
     background-position: center;
 }
 
-#paso-img-1 {
-    background-image: url('/img/1.jpeg');
-}
-
-#paso-img-2 {
-    background-image: url('/img/22.jpeg');
-}
-
-#paso-img-3 {
-    background-image: url('/img/23.jpeg');
-}
-
-#paso-img-4 {
-    background-image: url('/img/24.jpg');
-}
+#paso-img-1 { background-image: url('/img/1.jpeg'); }
+#paso-img-2 { background-image: url('/img/22.jpeg'); }
+#paso-img-3 { background-image: url('/img/23.jpeg'); }
+#paso-img-4 { background-image: url('/img/24.jpg'); }
 
 .paso-numero {
     font-size: 90px;
@@ -339,7 +212,7 @@ p {
     color: #333;
     max-width: 400px;
     line-height: 1.4;
-    font-family: 'Poppins', sans-serif; /* Corregido: 'poppins' a 'Poppins' */
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
 
@@ -349,79 +222,9 @@ p {
     background-color: #CE6A22;
 }
 
-@media (max-width: 576px) {
-    .paso-fila {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
-        gap: 0 !important;
-    }
-    .paso-circulo {
-        margin: 0 0 15px 0 !important;
-    }
-    .paso-numero {
-        margin: 0 0 10px 0 !important;
-        display: block !important;
-        order: 2 !important;
-    }
-    .paso-texto {
-        margin: 0 0 20px 0 !important;
-        text-align: center !important;
-        max-width: 90%;
-        font-size: 1.2rem;
-        order: 3 !important;
-    }
-    .contain-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-    /* Asegura que el número y el texto estén debajo de la imagen en todos los pasos */
-    .paso-fila > .paso-circulo {
-        order: 1 !important;
-    }
-    .paso-fila > h3.paso-numero {
-        order: 2 !important;
-    }
-    .paso-fila > p.paso-texto {
-        order: 3 !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .paso-fila {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        gap: 0;
-    }
-
-    .paso-circulo {
-        margin: 0 0 15px 0;
-    }
-
-    .paso-numero {
-        margin: 0 0 10px 0;
-        display: block;
-    }
-
-    .paso-texto {
-        margin: 0 0 20px 0;
-        text-align: center;
-        max-width: 90%;
-        font-size: 1.2rem;
-    }
-
-    .contain-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-/* --- SECCIÓN "Testimonios" --- */
+/* =========================
+   SECCIÓN TESTIMONIOS
+   ========================= */
 .seccion-testimonios h2 {
     color: #2B5433;
     font-family: 'Merriweather';
@@ -432,12 +235,11 @@ p {
     font-size: 30px;
 }
 
-/* Asegúrate de que el contenedor de las tarjetas permite flex-wrap */
-.testimonios-container { /* Asumiendo que tienes un contenedor flexbox para las cards */
+.testimonios-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Espacio entre las tarjetas */
+    gap: 20px;
 }
 
 .card-testimonio {
@@ -445,10 +247,9 @@ p {
     color: white;
     text-align: center;
     height: 100%;
-    /* CORREGIDO: Ancho adaptable, pero con max-width */
     width: 100%; 
-    max-width: 352px; /* Limita el ancho en pantallas grandes */
-    margin: 0 auto; /* Centra la tarjeta si es más pequeña que el contenedor */
+    max-width: 352px;
+    margin: 0 auto;
 }
 
 .img-testimonio {
@@ -462,7 +263,7 @@ p {
 
 .card-testimonio .frase {
     font-size: 21px;
-    font-family: 'Poppins', sans-serif; /* Corregido: 'poppins' a 'Poppins' */
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
     line-height: 1.5;
@@ -471,72 +272,40 @@ p {
 
 .card-testimonio .autor {
     font-size: 16px;
-    font-family: 'Poppins', sans-serif; /* Corregido: 'poppins' a 'Poppins' */
+    font-family: 'Poppins', sans-serif;
     font-style: italic;
     color: #dcdcdc;
     margin-bottom: 0;
 }
 
-/* --- SECCIÓN CÓMO APORTAR Y PREGUNTAS FRECUENTES --- */
-
-
+/* =========================
+   SECCIÓN "Cómo aportar" y "Preguntas frecuentes"
+   ========================= */
 .seccion-como-aportar img,
 .seccion-preguntas img {
     width: 100%;
-    /* CORREGIDO: Altura adaptable con max-height */
     height: auto; 
-    max-height: 700px; /* Máxima altura en pantallas grandes */
+    max-height: 700px;
     object-fit: cover;
     font-size: 2.5rem;
 }
 
-/* --- Centrado de Títulos y Justificado de Texto en Secciones "Cómo Aportar" y "Preguntas Frecuentes" --- */
-
-.seccion-como-aportar h2{
- font-family: 'Merriweather';
+.seccion-como-aportar h2,
+.seccion-preguntas h2 {
+    font-family: 'Merriweather';
 }
 
-.seccion-preguntas h2{
- font-family: 'Merriweather';
-}
-
-/* Justificar el resto del texto (párrafos y elementos de lista) dentro de las columnas de texto */
+/* Justificación de texto en columnas */
 .seccion-como-aportar .col-md-6 p,
-.seccion-como-aportar .col-md-6 ul li, /* Incluye li para los elementos de lista */
+.seccion-como-aportar .col-md-6 ul li,
 .seccion-preguntas .col-md-6 p,
-.seccion-preguntas .col-md-6 ul li { /* Incluye li para Preguntas Frecuentes*/
+.seccion-preguntas .col-md-6 ul li {
     text-align: justify;
 }
 
-
-
-/* --- Consideración de Responsividad para Justificación --- */
-@media (max-width: 767px) {
-    .seccion-como-aportar .col-md-6 p,
-    .seccion-como-aportar .col-md-6 ul li,
-    .seccion-preguntas .col-md-6 p,
-    .seccion-preguntas .col-md-6 ul li {
-        text-align: left; /* Alinea a la izquierda en pantallas pequeñas */
-    }
-}
-
-/* Media Query para ajustar altura de estas imágenes en móviles */
-@media (max-width: 767px) {
-    .seccion-como-aportar img,
-    .seccion-preguntas img {
-        height: 300px; /* Altura más adecuada para móviles */
-    }
-}
-@media (max-width: 480px) {
-    .seccion-como-aportar img,
-    .seccion-preguntas img {
-        height: 250px; /* Altura aún más reducida para móviles muy pequeños */
-    }
-}
-
-/* ======================================= */
-/* Inicio Sección: Un refugio con corazón */
-/* ======================================= */
+/* =========================
+   SECCIÓN "Un refugio con corazón"
+   ========================= */
 .refugio-corazon-section {
     background-color: #FEF9F1;
     padding: 80px 0;
@@ -548,7 +317,7 @@ p {
 }
 
 .text-block p {
-    color: var(--color-parrafo, #333); /* Agregado fallback si --color-parrafo no está definido */
+    color: var(--color-parrafo, #333);
     font-size: 1.3rem;
     line-height: 1.7;
     margin-bottom: 1.2rem;
@@ -570,81 +339,18 @@ p {
     object-fit: cover;
     object-position: center center;
     clip-path: path('M335.6,29.3c35.2,46,38.1,114.3,16.5,169.8c-21.6,55.5-67.6,98.2-121.2,112.9c-53.6,14.7-114.7,-0.4-154.9-43.1S-13.8,171.1,5.5,116.3C24.8,61.5,83.4,2,143.2,0.5C203-1,300.4-16.7,335.6,29.3Z');
-    /* CORREGIDO: Sintaxis correcta para filter: drop-shadow */
-    filter: drop-shadow(0 8px 10px #4CAF50); /* Usar el color directamente */
+    filter: drop-shadow(0 8px 10px #4CAF50);
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
 }
 
 .blob-image:hover {
     transform: scale(1.03);
-    /* CORREGIDO: Sintaxis correcta para filter: drop-shadow */
     filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.2)); 
 }
 
-/* ======================================= */
-/* Media Queries para Responsividad */
-/* ======================================= */
-
-@media (max-width: 991.98px) {
-    .refugio-corazon-section h2 {
-        font-size: 2.0rem;
-        margin-bottom: 2.5rem;
-    }
-    .text-block p {
-        font-size: 1.05rem;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .refugio-corazon-section .row {
-        flex-direction: column; 
-    }
-    .image-block {
-        order: -1;
-        margin-bottom: 2.5rem;
-        text-align: center;
-    }
-    .text-block {
-        text-align: center;
-    }
-    .text-block p {
-        text-align: center;
-    }
-    .refugio-corazon-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    /* CORREGIDO: Se aplica directamente a .blob-image si esa es la clase en tu HTML */
-    .blob-image { /* Cambiado de .rounded-image a .blob-image */
-        clip-path: polygon(
-            5% 0%,
-            95% 2%,
-            100% 90%,
-            70% 100%,
-            0% 90%
-            );
-            max-width: 80%;
-            margin: 0 auto;
-        }
-    }
-    
-    @media (max-width: 575.98px) {
-        .refugio-corazon-section {
-            padding: 60px 0;
-        }
-        .refugio-corazon-section h2 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-        }
-        .text-block p {
-            font-size: 1rem;
-        }
-}
-/* ======================================= */
-/* Fin Sección: Un refugio con corazón */
-/* ======================================= */
-
-/* --- INCIO SECCION FOOTER --- */
+/* =========================
+   FOOTER
+   ========================= */
 .main-footer {
     background-color: #265D3A;
     color: white;
@@ -708,35 +414,122 @@ p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
 .main-footer .footer-bottom p {
     font-size: 1em;
     color: rgba(255, 255, 255, 0.6);
     margin: 0;
 }
 
-/* Media Queries para responsividad del footer */
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+
+/* Navbar y Hero Slider */
+@media (max-width: 1023px) {
+    nav li { margin-right: 15px; }
+    nav a { font-size: 1em; }
+}
+
+@media (max-width: 767px) {
+    header { flex-direction: column; text-align: center; }
+    .navbar-collapse { justify-content: center !important; flex-grow: unset !important; }
+    .navbar-nav { justify-content: center; }
+    nav ul { flex-direction: column; align-items: center; width: 100%; }
+    nav li { margin-right: 0; margin-bottom: 10px; width: 100%; }
+    nav li:last-child { margin-bottom: 0; }
+    nav a { font-size: 1.1em; display: block; text-align: center; padding: 10px; }
+    .hero-slider { margin: 15px auto; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); height: 250px; aspect-ratio: unset; }
+    .slider-dots { bottom: 10px; padding: 4px; gap: 6px; }
+    .dot { width: 8px; height: 8px; }
+    .slider-nav { font-size: 14px; padding: 6px 10px; }
+    .slider-nav.prev { left: 10px; }
+    .slider-nav.next { right: 10px; }
+}
+
+/* Hero Slider en móviles muy pequeños */
+@media (max-width: 480px) {
+    .site-logo { height: 60px; }
+    nav a { font-size: 1em; padding: 8px; }
+    .slider-dots { gap: 5px; }
+    .slider-nav { font-size: 14px; padding: 5px 8px; }
+    .hero-slider { height: 200px; }
+}
+
+/* Pasos para adoptar en móviles */
+@media (max-width: 576px) {
+    .paso-fila, .paso-fila { flex-direction: column !important; align-items: center !important; text-align: center !important; justify-content: center !important; gap: 0 !important; }
+    .paso-circulo { margin: 0 0 15px 0 !important; }
+    .paso-numero { margin: 0 0 10px 0 !important; display: block !important; order: 2 !important; }
+    .paso-texto { margin: 0 0 20px 0 !important; text-align: center !important; max-width: 90%; font-size: 1.2rem; order: 3 !important; }
+    .contain-container { flex-direction: column !important; align-items: center !important; text-align: center !important; }
+    .paso-fila > .paso-circulo { order: 1 !important; }
+    .paso-fila > h3.paso-numero { order: 2 !important; }
+    .paso-fila > p.paso-texto { order: 3 !important; }
+}
+
+/* Cómo aportar y Preguntas frecuentes - texto y altura de imagen */
+@media (max-width: 767px) {
+    .seccion-como-aportar .col-md-6 p,
+    .seccion-como-aportar .col-md-6 ul li,
+    .seccion-preguntas .col-md-6 p,
+    .seccion-preguntas .col-md-6 ul li {
+        text-align: left;
+    }
+    .seccion-como-aportar img,
+    .seccion-preguntas img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion-como-aportar img,
+    .seccion-preguntas img {
+        height: 250px;
+    }
+}
+
+/* Un refugio con corazón - responsividad */
+@media (max-width: 991.98px) {
+    .refugio-corazon-section h2 { font-size: 2.0rem; margin-bottom: 2.5rem; }
+    .text-block p { font-size: 1.05rem; }
+}
+
+@media (max-width: 767.98px) {
+    .refugio-corazon-section .row { flex-direction: column; }
+    .image-block { order: -1; margin-bottom: 2.5rem; text-align: center; }
+    .text-block { text-align: center; }
+    .text-block p { text-align: center; }
+    .refugio-corazon-section h2 { font-size: 2rem; margin-bottom: 2rem; }
+    .blob-image {
+        clip-path: polygon(5% 0%, 95% 2%, 100% 90%, 70% 100%, 0% 90%);
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .refugio-corazon-section { padding: 60px 0; }
+    .refugio-corazon-section h2 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+    .text-block p { font-size: 1rem; }
+}
+
+/* Footer responsivo */
 @media (max-width: 767px) {
     .main-footer .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    
     .main-footer .footer-section {
         min-width: 100%;
         margin-bottom: 30px;
     }
-    
     .main-footer .footer-section:last-child {
         margin-bottom: 0;
     }
-    
     .main-footer .social-icons {
         justify-content: center;
         display: flex;
         width: 100%;
     }
 }
-/* --- FIN SECCION FOOTER --- */
